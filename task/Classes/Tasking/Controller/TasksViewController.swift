@@ -39,14 +39,8 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         layoutDecisionByNetwork()
          setupNavBar()
         addNotifications()
-        
         checkupdate ()
-        
-
-     
-        
-     
-        
+ 
     }
     
     func layoutDecisionByNetwork(){
