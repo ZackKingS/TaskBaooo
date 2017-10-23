@@ -1,0 +1,54 @@
+PODS:
+  - Alamofire (4.5.1)
+  - JCore (1.1.5)
+  - JPush (3.0.6):
+    - JCore (~> 1.1.1)
+  - Kingfisher (3.10.4)
+  - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.13)
+  - ReachabilitySwift (3)
+  - RxCocoa (3.6.1):
+    - RxSwift (~> 3.6)
+  - RxSwift (3.6.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - SnapKit (3.2.0)
+  - SVProgressHUD (2.1.2)
+  - SwiftTheme (0.3.3)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5.0)
+  - JPush
+  - Kingfisher (~> 3.10.4)
+  - MBProgressHUD
+  - MJRefresh
+  - ReachabilitySwift
+  - RxCocoa (~> 3.6.1)
+  - RxSwift (~> 3.6.1)
+  - SDWebImage
+  - SnapKit (~> 3.2.0)
+  - SVProgressHUD (~> 2.1.2)
+  - SwiftTheme
+  - SwiftyJSON (~> 3.1.4)
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  JCore: 9bd9c770c877c583d98b90a68792b8361974c231
+  JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
+  Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: 56a28aa628c9895e97a518dabaecf70b18f92f32
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
+  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 14ebc6047921534fa35f9680ab3c16b9c5dd1f42
+
+COCOAPODS: 1.2.0

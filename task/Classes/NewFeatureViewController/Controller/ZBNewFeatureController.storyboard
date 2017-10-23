@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GoB-PT-jXo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Feature Controller-->
+        <scene sceneID="59W-kT-zGW">
+            <objects>
+                <viewController id="GoB-PT-jXo" customClass="ZBNewFeatureController" customModule="task" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VxW-lf-OJA"/>
+                        <viewControllerLayoutGuide type="bottom" id="23R-Ev-djX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m51-H6-yMZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="B4l-30-z6V">
+                                <rect key="frame" x="168" y="588" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="KBy-UH-jNP"/>
+                                    <constraint firstAttribute="height" constant="37" id="atY-84-ngy"/>
+                                </constraints>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HA4-D0-qY7">
+                                <rect key="frame" x="137" y="539" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.61960784310000006" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mum-pF-V5r"/>
+                                    <constraint firstAttribute="width" constant="100" id="TCb-M6-ygq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="开始体验">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="jump:" destination="GoB-PT-jXo" eventType="touchUpInside" id="VlO-Y3-wFX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B4l-30-z6V" firstAttribute="centerX" secondItem="m51-H6-yMZ" secondAttribute="centerX" id="02K-Qe-qjR"/>
+                            <constraint firstItem="HA4-D0-qY7" firstAttribute="centerX" secondItem="m51-H6-yMZ" secondAttribute="centerX" id="2dm-jj-gBV"/>
+                            <constraint firstItem="23R-Ev-djX" firstAttribute="top" secondItem="B4l-30-z6V" secondAttribute="bottom" constant="42" id="Bzz-DO-32Q"/>
+                            <constraint firstItem="B4l-30-z6V" firstAttribute="top" secondItem="HA4-D0-qY7" secondAttribute="bottom" constant="19" id="dwx-N5-ptn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="jimp" destination="HA4-D0-qY7" id="mMb-We-L4s"/>
+                        <outlet property="pageControl" destination="B4l-30-z6V" id="hSh-kG-haq"/>
+                        <outlet property="startButton" destination="HA4-D0-qY7" id="R36-9m-Ojl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQ9-4h-KD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="249"/>
+        </scene>
+    </scenes>
+</document>

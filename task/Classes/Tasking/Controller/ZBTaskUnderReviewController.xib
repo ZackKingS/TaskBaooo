@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBTaskUnderReviewController" customModule="task" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="ShU-jH-8DU" id="kvF-9q-zxJ"/>
+                <outlet property="view" destination="iN0-l3-epB" id="rfQ-4J-82t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underReview" translatesAutoresizingMaskIntoConstraints="NO" id="Qsy-UQ-c7S">
+                    <rect key="frame" x="109" y="89" width="157" height="157"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="157" id="1sR-5r-9xf"/>
+                        <constraint firstAttribute="width" constant="157" id="Jbb-4g-etL"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ShU-jH-8DU">
+                    <rect key="frame" x="113.5" y="529" width="148" height="35"/>
+                    <color key="backgroundColor" red="0.90228825807571411" green="0.46338135004043579" blue="0.11062020808458328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="9te-Oj-WdS"/>
+                        <constraint firstAttribute="width" constant="148" id="UMN-fF-4BM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="回首页"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="VkZ-s0-TwC"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审核中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq6-A2-FtE">
+                    <rect key="frame" x="166" y="191" width="43" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片已上传" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceC-pN-CWu">
+                    <rect key="frame" x="149" y="276" width="76.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请等待审核" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI2-1I-I4w">
+                    <rect key="frame" x="149" y="311" width="77" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请等待审核" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV5-8Y-OwR">
+                    <rect key="frame" x="149" y="582" width="77" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="77" id="62p-ck-Ijw"/>
+                        <constraint firstAttribute="height" constant="18" id="vZg-EE-gd9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Sq6-A2-FtE" firstAttribute="top" secondItem="Qsy-UQ-c7S" secondAttribute="bottom" constant="-55" id="0ZK-6L-fEh"/>
+                <constraint firstItem="ShU-jH-8DU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2Sc-9S-XuH"/>
+                <constraint firstItem="zI2-1I-I4w" firstAttribute="centerX" secondItem="ceC-pN-CWu" secondAttribute="centerX" id="Cj2-jm-h01"/>
+                <constraint firstItem="ceC-pN-CWu" firstAttribute="centerX" secondItem="Qsy-UQ-c7S" secondAttribute="centerX" id="KNA-WQ-aL8"/>
+                <constraint firstItem="Qsy-UQ-c7S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="89" id="Rea-jk-MUd"/>
+                <constraint firstItem="Sq6-A2-FtE" firstAttribute="centerX" secondItem="Qsy-UQ-c7S" secondAttribute="centerX" id="YW2-31-oa4"/>
+                <constraint firstAttribute="bottom" secondItem="vV5-8Y-OwR" secondAttribute="bottom" constant="67" id="ats-JZ-iYt"/>
+                <constraint firstItem="zI2-1I-I4w" firstAttribute="top" secondItem="ceC-pN-CWu" secondAttribute="bottom" constant="17" id="cZV-Ee-vAh"/>
+                <constraint firstItem="vV5-8Y-OwR" firstAttribute="top" secondItem="ShU-jH-8DU" secondAttribute="bottom" constant="18" id="jV4-eL-8Bn"/>
+                <constraint firstItem="ceC-pN-CWu" firstAttribute="top" secondItem="Qsy-UQ-c7S" secondAttribute="bottom" constant="30" id="kwu-vI-fLR"/>
+                <constraint firstItem="Qsy-UQ-c7S" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vwa-t4-MPR"/>
+                <constraint firstItem="vV5-8Y-OwR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zbM-9R-Umv"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="underReview" width="153" height="153"/>
+    </resources>
+</document>

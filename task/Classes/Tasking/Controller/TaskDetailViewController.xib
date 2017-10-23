@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskDetailViewController" customModule="task" customModuleProvider="target">
+            <connections>
+                <outlet property="startBtn" destination="Aei-wG-TQ1" id="GOu-sJ-9Jf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="gsf-Kj-jAn"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVu-bY-3uT">
+                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aei-wG-TQ1">
+                            <rect key="frame" x="122.5" y="0.0" width="130" height="40"/>
+                            <color key="backgroundColor" red="0.90228825807571411" green="0.46338135004043579" blue="0.11062020808458328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="130" id="Eme-Dn-sZA"/>
+                                <constraint firstAttribute="height" constant="40" id="c1D-fZ-Ht3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="立即开始"/>
+                            <connections>
+                                <action selector="start:" destination="-1" eventType="touchUpInside" id="5ei-XC-8bB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Aei-wG-TQ1" firstAttribute="centerX" secondItem="MVu-bY-3uT" secondAttribute="centerX" id="5tx-hU-84b"/>
+                        <constraint firstAttribute="height" constant="80" id="le3-BK-PDO"/>
+                        <constraint firstItem="Aei-wG-TQ1" firstAttribute="centerY" secondItem="MVu-bY-3uT" secondAttribute="centerY" constant="-20" id="xJE-SP-Xqg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="MVu-bY-3uT" secondAttribute="trailing" id="fBP-ne-Bq5"/>
+                <constraint firstAttribute="bottom" secondItem="MVu-bY-3uT" secondAttribute="bottom" id="hOm-Ba-g5i"/>
+                <constraint firstItem="MVu-bY-3uT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vTO-yH-WlD"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
