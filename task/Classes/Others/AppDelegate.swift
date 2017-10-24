@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         
         
         //1. 任务详情的url是写死的
-        //2. 跳转更新的url是写死的
+        //2. 跳转appstore更新的url是写死的
        //3. 推送
         configPush(launchOptions  :launchOptions)
         return true
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         // 参数2: 填你创建的应用生成的AppKey
         // 参数3: 可以不填
         // 参数4: 这个值生产环境为YES，开发环境为NO(BOOL值)
-        JPUSHService.setup(withOption: launchOptions, appKey: "62ea209c75aadacd9f863b65", channel: nil, apsForProduction: false)
+        JPUSHService.setup(withOption: launchOptions, appKey: JPushAppKey, channel: nil, apsForProduction: false)
         
     }
     

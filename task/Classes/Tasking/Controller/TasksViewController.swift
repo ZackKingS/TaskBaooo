@@ -111,8 +111,6 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
        NotificationCenter.default.addObserver(self, selector: #selector(pushfinishhh), name: NSNotification.Name(rawValue: "pushfinishhh"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(pushsetting), name: NSNotification.Name(rawValue: "pushsetting"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
-
-        
          NotificationCenter.default.addObserver(self, selector: #selector(gologin), name: NSNotification.Name(rawValue: "gologin"), object: nil)
         
     }
@@ -155,15 +153,12 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @objc  func   pushfinishhh(){
         
-        
         //1 close
         QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
         //2.push
         navigationController?.pushViewController(ZBBanlanceController(), animated: true)
         
     }
-    
-
     
     @objc  func   closeTheDrawer(){
         //1 close
@@ -334,20 +329,12 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 
             }
             
-//        }else     {  //未登录 去登陆
-//            let nav = ZBNavVC.init(rootViewController: ZBLoginController())
-//            present(nav, animated: true, completion: nil)
-//        }
-        
-        
-        
-      
-        
+
         
     }
     
     
-    
+     // MARK:========  版本更新============
     func checkupdate (){
         
         

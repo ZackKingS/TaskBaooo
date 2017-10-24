@@ -105,6 +105,9 @@ let ZBLogin = UserDefaults.standard.object(forKey: ZBLOGIN_KEY)! as! Bool
 
 let USER = "user"
 
+
+let JPushAppKey = "7d425198700d9902fe86b81f"
+
 //MARK: 测试接口
 //----------------   用户接口---------------------------
 //let BaseURL = "http://taskbao.dev.cnfol.wh/"

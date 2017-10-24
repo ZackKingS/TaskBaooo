@@ -22,8 +22,6 @@ class TaskDetailViewController: UIViewController {
          setConfig()
 
     
-        
-        
         let str  = API_GETTASKDETAIL_URL +  "?id=\(id!)&userid=\(User.GetUser().id!)"
         
         NetworkTool.getTaskList(url: str, completionHandler: { (json) in
@@ -50,13 +48,9 @@ class TaskDetailViewController: UIViewController {
              print(dataDict["image"]!.stringValue)
 
             
-            
-        
         })
     }
 
-  
-    
     @IBAction func start(_ sender: Any) {
         
         navigationController?.pushViewController(ZBStartTaskController(), animated: true)

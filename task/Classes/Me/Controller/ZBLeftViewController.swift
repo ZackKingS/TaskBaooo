@@ -56,8 +56,6 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     
-    
-    
     var footerView: UIView{
         let view = UIView.init(frame: CGRect.init(x: 0, y: 0.4 + kLeftheaderHeight + kLeftTableViewHeight , width: screenWidth, height: screenHeight - kLeftheaderHeight - kLeftTableViewHeight))
         view.backgroundColor =  UIColor.themeColor()
@@ -77,17 +75,12 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
         
         
-        
-        
-        
         //设置iocn
         let settingV = UIImageView.init(frame:  CGRect.init(x: 17, y: screenHeight - kLeftheaderHeight - kLeftTableViewHeight - 50, width: 20, height: 20))
         view.addSubview(settingV)
         settingV.image = UIImage.init(named: "setting")
         settingV.isUserInteractionEnabled = true
         settingV.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(setting)))
-        
-        
         
         
         //设置
