@@ -23,6 +23,15 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
         
         setupConfig()
         
+        
+        
+        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY) {
+            
+            logoutBtn.isHidden = false
+        }else{
+            
+              logoutBtn.isHidden = true
+        }
    
         
     
@@ -61,13 +70,33 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
     
     
     @IBAction func logout(_ sender: Any) {
+        alcerrrr()
+    }
+    
+    
+    func alcerrrr(){
         
         
+        let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionCancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
+        let actionCamera = UIAlertAction.init(title: "确定", style: .default) { (UIAlertAction) -> Void in
+            self.out()
+        }
+  
+        alert.addAction(actionCancel)
+        alert.addAction(actionCamera)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func out(){
         UserDefaults.standard.set(false, forKey: ZBLOGIN_KEY)
         UserDefaults.standard.synchronize()
         navigationController?.popViewController(animated: true)
+        
     }
-    
     
     func setupConfig(){
         
@@ -125,7 +154,7 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
         let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // change the style sheet text color
-        alert.view.tintColor = UIColor.black
+//        alert.view.tintColor = UIColor.blue
         
         let actionCancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
         let actionCamera = UIAlertAction.init(title: "确定", style: .default) { (UIAlertAction) -> Void in

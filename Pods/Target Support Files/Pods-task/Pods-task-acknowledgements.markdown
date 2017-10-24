@@ -24,6 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## JAnalytics
+
+Copyright jpush.cn
+
 ## JCore
 
 Copyright jpush.cn

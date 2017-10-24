@@ -30,5 +30,9 @@ target 'task' do
 
 pod 'JPush'
 
+pod 'JAnalytics'
+
+
+
 
 end

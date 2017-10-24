@@ -54,6 +54,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         // 参数4: 这个值生产环境为YES，开发环境为NO(BOOL值)
         JPUSHService.setup(withOption: launchOptions, appKey: JPushAppKey, channel: nil, apsForProduction: false)
         
+        
+        
+        
+        let config =  JANALYTICSLaunchConfig()
+        config.appKey = JPushAppKey
+        config.channel = nil
+        JANALYTICSService.setup(with: config)
+        
+        
     }
     
     

@@ -28,9 +28,15 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setRefresh()
+        JANALYTICSService.startLogPageView("TasksViewController")
+
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        JANALYTICSService.stopLogPageView("TasksViewController")
         
-
-
     }
     
     override func viewDidLoad() {
@@ -222,7 +228,7 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
       btShare.addTarget(self, action:#selector(tapped(_:)), for:.touchUpInside)
         leftBtn = btShare
         navigationItem.leftBarButtonItem =  UIBarButtonItem.init(customView: btShare)
-        navigationItem.title = "兼职任务宝";
+        navigationItem.title = "i兼职";
         
     }
     func tapped(_ button:UIButton){
