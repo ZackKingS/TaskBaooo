@@ -148,32 +148,7 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if  UserDefaults.standard.bool(forKey: ZBLOGIN_KEY)  {
 //            userNameL.text = User.GetUser().nickname
             
-            
-//            let url = "/v1/user/profile"
-//            let key = SecureTool.reKey(url: url)
-//            let timestamp :String = SecureTool.reTimestamp()
-//            let uuid = ASIdentifierManager.shared().advertisingIdentifier.uuidString as NSString
-//            let    str = "\(API_GETPROFILE_URL)?id=\(User.GetUser().id!)&key=\(key)&t=\(timestamp)&imei=\((uuid as String))"
-//            NetworkTool.getTaskList(url: str, completionHandler: { (json) in
-//                
-//                let dataArr  = json["data"].dictionaryValue
-//                print(dataArr["account"]!)
-//                print(dataArr["finished"]!)
-//                
-//                let finished = "\(dataArr["finished"]!.stringValue)项"
-//                 let account = "\(dataArr["account"]!.stringValue)元"
-//
-//                self.rightDataArray = [ finished, account]
-//                self.zbtableView?.reloadData()
-//
-//            })
-            
-            
         }
-        
-        
-        
-        
         
     }
     
@@ -208,10 +183,7 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
     @objc  func gotProfile(notification: Notification) {
         
 
-        
-        
         let login = UserDefaults.standard.object(forKey: ZBLOGIN_KEY)! as! Bool
-        
         
         
         if     login  { //已经登录

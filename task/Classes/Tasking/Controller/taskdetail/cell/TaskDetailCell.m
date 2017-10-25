@@ -64,7 +64,7 @@
            self.descri.text = note.userInfo[@"description"];
 //        self.time.text =  [NSString stringWithFormat:@"任务时间: %@ - %@ ",note.userInfo[@"start_time"],note.userInfo[@"deadline"]];
         
-        self.time.text =  [NSString stringWithFormat:@"任务时间: %@ - %@ ",start,end];
+        self.time.text =  [NSString stringWithFormat:@"任务时间: %@ ~ %@ ",start,end];
 
         
     });

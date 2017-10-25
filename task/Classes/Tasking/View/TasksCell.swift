@@ -48,7 +48,7 @@ class TasksCell: UITableViewCell {
                  
 //                date_L?.text = viewModel.start_time! + " - " +  viewModel.deadline!
                 
-                date_L?.text = start! + " - " +  end!
+                date_L?.text = start! + " ~ " +  end!
                 fini?.isHidden = true
                 rightTop_L?.isHidden = false
 
@@ -143,7 +143,8 @@ class TasksCell: UITableViewCell {
         let taskNameL = UILabel()
         task_NameL = taskNameL
         taskNameL.text = "恒泰开户"
-        taskNameL.font = UIFont.systemFont(ofSize: 17)
+        taskNameL.textColor = UIColor.colorWithHexString(Color_Value: "333333", alpha: 1)
+        taskNameL.font = UIFont.systemFont(ofSize: 16)
         self.addSubview(taskNameL)
         taskNameL.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(17)
@@ -189,11 +190,12 @@ class TasksCell: UITableViewCell {
         
         let dateL = UILabel()
         date_L = dateL
+        dateL.textColor = UIColor.colorWithHexString(Color_Value: "999999", alpha: 1)
         dateL.text = "2017.09.13 - 2017.03.30"
         dateL.font = UIFont.systemFont(ofSize: 12)
         self.addSubview(dateL)
         dateL.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self).offset(-15)
+            make.bottom.equalTo(self).offset(-21)
             make.left.equalTo(self).offset(35)
             make.width.equalTo(300)
             make.height.equalTo(15)
