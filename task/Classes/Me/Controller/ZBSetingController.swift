@@ -92,6 +92,20 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
     }
     
     func out(){
+        
+        
+        let    parameters = ["id": User.GetUser().id ] as! [String :String]
+        
+        Alamofire.request( API_LOGOUT_URL,method : .post, parameters :parameters ).responseJSON { (response) in
+            //判断是否成功
+            guard response.result.isSuccess else {
+                return
+            }
+            
+        }
+        
+        
+        
         UserDefaults.standard.set(false, forKey: ZBLOGIN_KEY)
         UserDefaults.standard.synchronize()
         navigationController?.popViewController(animated: true)

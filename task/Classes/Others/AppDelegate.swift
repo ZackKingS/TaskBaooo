@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AdSupport
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
    
@@ -37,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         //2. 跳转appstore更新的url是写死的
        //3. 推送
         configPush(launchOptions  :launchOptions)
+        
+        
         return true
     }
     
@@ -54,14 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         // 参数4: 这个值生产环境为YES，开发环境为NO(BOOL值)
         JPUSHService.setup(withOption: launchOptions, appKey: JPushAppKey, channel: nil, apsForProduction: false)
         
-        
-        
-        
         let config =  JANALYTICSLaunchConfig()
         config.appKey = JPushAppKey
         config.channel = nil
         JANALYTICSService.setup(with: config)
-        
         
     }
     
@@ -82,41 +81,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         JPUSHService.registerDeviceToken(deviceToken as Data!)
         print("Notification token: ", deviceToken)
+        
+        
+        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
+            
+            print(User.GetUser().id)
+           
+            JPUSHService.setAlias(User.GetUser().id, completion: nil, seq: 1)
+        }
+        
+   
+        
     }
     
-    //（App即将进入前台）中将小红点清除
-    func applicationWillEnterForeground(application: UIApplication) {    UIApplication.shared.applicationIconBadgeNumber = 0
-    }
+    
     
     // 处理接收推送错误的情况(一般不会…)
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("error: Notification setup failed: ", error)
     }
     
-    // App在后台时收到推送时的处理
-    private func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    
+    //app必须在前台才能进到这个方法
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
-        JPUSHService.handleRemoteNotification(userInfo)
-
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        /**
-         *  iOS的应用程序分为3种状态
-         *      1、前台运行的状态UIApplicationStateActive；
-         *      2、后台运行的状态UIApplicationStateInactive；
-         *      3、app关闭状态UIApplicationStateBackground。
-         */
-        // 应用在前台 或者后台开启状态下，不跳转页面，让用户选择。
-        if (application.applicationState == UIApplicationState.active) || (application.applicationState == UIApplicationState.background){
-//            UIAlertView(title: "推送消息", message: "\(alert)", delegate: nil, cancelButtonTitle: "确定").show()
-        }else{
-            //杀死状态下，直接跳转到跳转页面
-        }
-        // badge清零
-        application.applicationIconBadgeNumber = 0
-        JPUSHService.resetBadge()
-        completionHandler(UIBackgroundFetchResult.newData)
+        JPUSHService.handleRemoteNotification(userInfo);
+        completionHandler(UIBackgroundFetchResult.newData);
     }
     
+    
+    
+    
+    // 接收到推送实现的方法
+    func receivePush(_ userInfo : Dictionary<String,Any>) {
+        // 角标变0
+        UIApplication.shared.applicationIconBadgeNumber = 0;
+        // 剩下的根据需要自定义
+//        self.tabBarVC?.selectedIndex = 0;
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName_ReceivePush), object: NotificationObject_Sueecess, userInfo: userInfo)
+    }
+
 
     
 
@@ -175,6 +179,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
+        
+                UIApplication.shared.applicationIconBadgeNumber = 0
+        
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
 

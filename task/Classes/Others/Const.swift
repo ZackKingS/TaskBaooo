@@ -106,7 +106,11 @@ let ZBLogin = UserDefaults.standard.object(forKey: ZBLOGIN_KEY)! as! Bool
 let USER = "user"
 
 
-let JPushAppKey = "7d425198700d9902fe86b81f"
+//let JPushAppKey = "7d425198700d9902fe86b81f"
+
+let JPushAppKey = "7f0278e3db3e0f2559492e9d"
+
+
 
 //MARK: 测试接口
 //----------------   用户接口---------------------------
@@ -130,6 +134,8 @@ let API_GETIMCOME_URL = BaseURL + "v1/user/income"
 //查询余额
 let API_GETPROFILE_URL = BaseURL + "v1/user/profile"
 
+//退出
+let API_LOGOUT_URL = BaseURL +  "/v1/user/logout"
 
 
 //----------------   任务接口---------------------------

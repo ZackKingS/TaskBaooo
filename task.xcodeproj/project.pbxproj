@@ -636,7 +636,7 @@
 				TargetAttributes = {
 					3A09359F1F6BD99100C1BA5A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8E534K4D8Z;
+						DevelopmentTeam = 7ZE93T5TSQ;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -927,12 +927,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8E534K4D8Z;
+				DEVELOPMENT_TEAM = 7ZE93T5TSQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = task/Classes/Others/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cnfol.wqe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idong.taskbao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -953,12 +953,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8E534K4D8Z;
+				DEVELOPMENT_TEAM = 7ZE93T5TSQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = task/Classes/Others/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cnfol.wqe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.idong.taskbao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "task/Classes/LoginRegist/Model/task-Bridging-Header.h";
