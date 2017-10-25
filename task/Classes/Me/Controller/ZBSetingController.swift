@@ -102,6 +102,15 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
                 return
             }
             
+            if let value = response.result.value {
+            
+                let json = JSON(value)
+                let message = json["message"].stringValue
+              
+                
+                print(message)
+            }
+            
         }
         
         

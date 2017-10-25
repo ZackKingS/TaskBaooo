@@ -88,7 +88,7 @@ static void *TcPagingViewScrollContext = &TcPagingViewScrollContext;
         _pageCount = 1;
         _currentIndex = 0;
         _titleColor = [UIColor blackColor];
-        _titleSelectedColor = [UIColor redColor];
+        _titleSelectedColor =    [UIColor colorWithRed:253/255.0 green:130/255.0 blue:48/255.0 alpha:1]; //[UIColor redColor];
         if (titlesArray && [titlesArray isKindOfClass:[NSArray class]]) {
             _pageCount = titlesArray.count;
         }

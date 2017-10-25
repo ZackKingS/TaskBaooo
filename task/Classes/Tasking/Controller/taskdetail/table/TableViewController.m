@@ -29,7 +29,37 @@
     [self.tableView registerNib: [UINib nibWithNibName:@"TaskDetailCell" bundle:nil] forCellReuseIdentifier:@"cell"];
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showinfo:) name:@"taskInfo" object:nil];
 }
+
+- (void)showinfo:(NSNotification *)note{
+    
+    //回到主线程
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+       
+        self.textFieldHeight =  [self calculateRowHeight:note.userInfo[@"description"] fontSize:14];
+        
+        [self.tableView reloadData];
+        
+    });
+    
+    
+}
+
+- (CGFloat)calculateRowHeight:(NSString *)string fontSize:(NSInteger)fontSize{
+    
+    
+    
+    
+    
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};//指定字号
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(self.view.bounds.size.width - 30, 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |
+                   NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    return rect.size.height;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,12 +77,24 @@
     return 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return self.textFieldHeight + 200;
+    
+//    return 1200;
+}
+
+
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     
     TaskDetailCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
+    cell.textFieldHeight = self.textFieldHeight;
     return cell;
 }
 

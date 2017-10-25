@@ -20,22 +20,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="....." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UB-YK-9dT">
-                        <rect key="frame" x="28" y="212" width="19" height="16"/>
+                        <rect key="frame" x="28" y="136" width="19" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="luu-WK-CFK">
-                        <rect key="frame" x="28" y="28" width="342" height="176"/>
+                        <rect key="frame" x="18" y="28" width="358" height="100"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="176" id="P09-PV-RsS"/>
+                            <constraint firstAttribute="height" constant="100" id="P09-PV-RsS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDN-WC-myU">
-                        <rect key="frame" x="28" y="236" width="0.0" height="0.0"/>
+                        <rect key="frame" x="28" y="160" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,16 +43,17 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="mDN-WC-myU" firstAttribute="top" secondItem="6UB-YK-9dT" secondAttribute="bottom" constant="8" id="1cH-5F-oDT"/>
-                    <constraint firstItem="luu-WK-CFK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="2Ut-vr-csk"/>
+                    <constraint firstItem="luu-WK-CFK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="2Ut-vr-csk"/>
                     <constraint firstItem="luu-WK-CFK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="L2e-Bo-BeQ"/>
                     <constraint firstItem="6UB-YK-9dT" firstAttribute="top" secondItem="luu-WK-CFK" secondAttribute="bottom" constant="8" id="NLe-l8-oUY"/>
-                    <constraint firstItem="6UB-YK-9dT" firstAttribute="leading" secondItem="luu-WK-CFK" secondAttribute="leading" id="UFH-cu-3Oq"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="luu-WK-CFK" secondAttribute="trailing" constant="16" id="drl-Ek-k6t"/>
+                    <constraint firstItem="6UB-YK-9dT" firstAttribute="leading" secondItem="luu-WK-CFK" secondAttribute="leading" constant="10" id="UFH-cu-3Oq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="luu-WK-CFK" secondAttribute="trailing" constant="10" id="drl-Ek-k6t"/>
                     <constraint firstItem="mDN-WC-myU" firstAttribute="leading" secondItem="6UB-YK-9dT" secondAttribute="leading" id="ovS-eI-CjV"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="descri" destination="luu-WK-CFK" id="EmX-9Y-FAL"/>
+                <outlet property="heightCons" destination="P09-PV-RsS" id="gEl-db-U9R"/>
                 <outlet property="time" destination="6UB-YK-9dT" id="FWw-UA-GqQ"/>
                 <outlet property="totle" destination="mDN-WC-myU" id="FuU-c9-gaH"/>
             </connections>

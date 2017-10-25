@@ -12,7 +12,7 @@
 @property(strong,nonatomic)NSString * taskinfo;
 @property(nonatomic,assign)int count;
 
-
+@property(nonatomic,assign)double textFieldHeight;
 
 
 @end

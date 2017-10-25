@@ -25,8 +25,10 @@
 
 - (void)initUI
 {
-    self.color = [UIColor redColor].CGColor;
+        self.color =    [UIColor orangeColor].CGColor;
     
+    
+//     self.color =   [UIColor colorWithRed:253/255.0 green:130/255.0 blue:48/255.0 alpha:1].CGColor;
 }
 
 

@@ -28,7 +28,7 @@
 @property (nonatomic, strong) UIImageView * taskImageV;
 
 @property (nonatomic, strong) NSDictionary *taskInfoDic;
-
+@property(nonatomic,assign)double textFieldHeight;
 @end
 
 @implementation ViewController
@@ -98,6 +98,14 @@
             self.taskInfoDic = dict;
             
             
+            
+            
+            
+//            self.textFieldHeight  = [self calculateRowHeight:dict[@"data"][@"description"] fontSize:14];
+            
+            
+//            NSLog(@"%f",self.textFieldHeight);
+            
             [[NSNotificationCenter defaultCenter] postNotificationName:@"taskInfo" object:nil userInfo:dict[@"data"]];
             
             //1.确定URL
@@ -114,6 +122,17 @@
 }
 
 
+- (CGFloat)calculateRowHeight:(NSString *)string fontSize:(NSInteger)fontSize{
+    
+    
+    
+    
+    
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};//指定字号
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(self.view.bounds.size.width - 30, 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |
+                   NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    return rect.size.height;
+}
 
 - (void)initUI
 {
@@ -134,6 +153,7 @@
         if (i == 0 ) {
              TableViewController * vc = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
             vc.taskinfo = self.taskName;
+//            vc.textFieldHeight = self.textFieldHeight;
             [array addObject:vc];
         }else{
            SecondTableViewController   * vc = [[SecondTableViewController alloc] initWithStyle:UITableViewStylePlain];

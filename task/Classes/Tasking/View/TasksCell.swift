@@ -37,7 +37,7 @@ class TasksCell: UITableViewCell {
 
             task_NameL?.text = viewModel.title
             
-            price_L?.text = viewModel.price
+            price_L?.text =  "¥\(viewModel.price!)"
   
             
             if (type == "1") {
@@ -155,7 +155,8 @@ class TasksCell: UITableViewCell {
         
         let priceL = UILabel()
         price_L = priceL
-        priceL.text = "¥ 20"
+        priceL.text = "¥20"
+        priceL.textColor = UIColor.colorWithHexString(Color_Value: "#ff821e", alpha: 1)
         priceL.font = UIFont.systemFont(ofSize: 20)
         self.addSubview(priceL)
         priceL.snp.makeConstraints { (make) in

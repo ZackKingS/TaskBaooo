@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *totle;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightCons;
 
 @end
 
@@ -27,7 +28,14 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 
+
+//    NSLog(@"%f",self.textFieldHeight);
+//
+//    self.heightCons.constant = self.textFieldHeight;
     
+    self.descri.scrollEnabled = NO;
+    
+    self.descri.editable = NO;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showinfo:) name:@"taskInfo" object:nil];
     
@@ -42,8 +50,16 @@
         NSString * start = [note.userInfo[@"start_time"] componentsSeparatedByString:@" "].firstObject;
         NSString * end =   [note.userInfo[@"deadline"] componentsSeparatedByString:@" "].firstObject;
         
+//         NSLog(@"%f",self.textFieldHeight);
         
         
+        
+//          self.textFieldHeight  = [self calculateRowHeight:dict[@"data"][@"description"] fontSize:14];
+        
+        self.heightCons.constant =   [self calculateRowHeight:note.userInfo[@"description"] fontSize:14]  + 15;
+        
+        
+          NSLog(@"%f",  self.heightCons.constant);
         
            self.descri.text = note.userInfo[@"description"];
 //        self.time.text =  [NSString stringWithFormat:@"任务时间: %@ - %@ ",note.userInfo[@"start_time"],note.userInfo[@"deadline"]];
@@ -55,6 +71,19 @@
     
  
 }
+
+- (CGFloat)calculateRowHeight:(NSString *)string fontSize:(NSInteger)fontSize{
+    
+    
+    
+    
+    
+    NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};//指定字号
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(self.bounds.size.width - 30, 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |
+                   NSStringDrawingUsesFontLeading attributes:dic context:nil];
+    return rect.size.height;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
