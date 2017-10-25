@@ -40,7 +40,11 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         view.addSubview(userHeaderV)
         userHeaderV.image = UIImage.init(named: "header")
         
+          userHeaderV.isUserInteractionEnabled  = true
+        let  pannnn = UITapGestureRecognizer.init(target: self, action: #selector(tapp))
         
+        //附加识别器到视图
+        userHeaderV.addGestureRecognizer(pannnn)
         
         
        //昵称
@@ -55,6 +59,18 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         return view
     }
     
+    
+    /**平移事件*/
+    @objc func tapp(sender: UIPanGestureRecognizer) {
+        
+        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY) {
+           
+        }else{
+          
+            NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "gologin")))
+            
+        }
+    }
     
     var footerView: UIView{
         let view = UIView.init(frame: CGRect.init(x: 0, y: 0.4 + kLeftheaderHeight + kLeftTableViewHeight , width: screenWidth, height: screenHeight - kLeftheaderHeight - kLeftTableViewHeight))
