@@ -67,7 +67,7 @@ class ZBLeftCell: UITableViewCell {
         
         
         let topLinbe = UIView()
-        topLinbe.backgroundColor = UIColor.white
+        topLinbe.backgroundColor = UIColor.gray
         self.addSubview(topLinbe)
         topLinbe.snp.makeConstraints { (make) in
             make.top.equalTo(self)

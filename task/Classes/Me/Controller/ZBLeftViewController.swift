@@ -183,7 +183,7 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         let tableView = UITableView.init(frame: CGRect.init(x: 0, y: kLeftheaderHeight, width: headerView.bounds.width, height: kLeftTableViewHeight), style: .plain)
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.themeColor()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.gray
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
