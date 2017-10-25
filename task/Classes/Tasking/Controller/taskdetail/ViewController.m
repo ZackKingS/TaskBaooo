@@ -163,7 +163,7 @@
     }
     
     
-    TCPagesView * view = [[TCPagesView alloc] initWithFrame:[UIScreen mainScreen].bounds titles:@[@"任务目标",@"任务奖励"] headHeight:screenWidth*9/16 +10 segmentHeight:50 + 10  headView:headView itemsMargin:30 itemWidth:150 viewControllers:array belongController:self];
+    TCPagesView * view = [[TCPagesView alloc] initWithFrame:[UIScreen mainScreen].bounds titles:@[@"任务目标",@"任务奖励"] headHeight:screenWidth*9/16 +10 segmentHeight:50   headView:headView itemsMargin:30 itemWidth:150 viewControllers:array belongController:self];
     [self.view addSubview:view];
     view.delegate = self;
     

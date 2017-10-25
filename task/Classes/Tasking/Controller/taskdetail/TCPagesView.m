@@ -81,7 +81,7 @@ static void *TcPagingViewScrollContext = &TcPagingViewScrollContext;
         _headerView = headView;
         _itemWidth = itemWidth;
         _pregressHeight = 3.0;
-        _segmentViewHeight = segmentHeight ? segmentHeight :45;
+        _segmentViewHeight = segmentHeight ? segmentHeight :40;//45
         _headHeight = headHeight;
         
         _titlesArray = titlesArray;
@@ -162,7 +162,7 @@ static void *TcPagingViewScrollContext = &TcPagingViewScrollContext;
     _headerView.frame = frame;
     [self addSubview:_headerView];
     
-    _segmentView  = [[UIView alloc] initWithFrame:CGRectMake(0, _headHeight, screenWidth, _segmentViewHeight)];
+    _segmentView  = [[UIView alloc] initWithFrame:CGRectMake(0, _headHeight, screenWidth, _segmentViewHeight - 3)];
     _segmentView.backgroundColor = [UIColor whiteColor];
     _segmentView.layer.shadowColor = [UIColor colorWithWhite:0 alpha:0.3].CGColor;
     _segmentView.layer.shadowOpacity = 0.3;
@@ -197,7 +197,7 @@ static void *TcPagingViewScrollContext = &TcPagingViewScrollContext;
         [_segmentView addSubview:button];
     
     }
-    _pregressView = [[TcPrgressView alloc] initWithFrame:CGRectMake(0, _segmentViewHeight - _pregressHeight-3, screenWidth, _pregressHeight)];
+    _pregressView = [[TcPrgressView alloc] initWithFrame:CGRectMake(0, _segmentViewHeight - _pregressHeight-3, screenWidth, _pregressHeight )];
     _pregressView.itemFrames = self.pregressFrames;
     _pregressView.backgroundColor = [UIColor clearColor];
     [_segmentView addSubview:_pregressView];
