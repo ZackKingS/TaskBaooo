@@ -113,6 +113,9 @@ class ZBSetPwdController: UIViewController ,UITextFieldDelegate  {
                 print(user.tel!)
                 
                 
+                //极光注册
+                JPUSHService.setAlias(User.GetUser().id, completion: nil, seq: 1)
+                
                 let data = NSKeyedArchiver.archivedData(withRootObject: user) as NSData
                 UserDefaults.standard.set(data, forKey: "user")
 
@@ -190,6 +193,10 @@ class ZBSetPwdController: UIViewController ,UITextFieldDelegate  {
                 UserDefaults.standard.set(data, forKey: USER)
                 UserDefaults.standard.set(true, forKey: ZBLOGIN_KEY)
 
+                
+                //极光注册
+                JPUSHService.setAlias(User.GetUser().id, completion: nil, seq: 1)
+                
                self.navigationController?.pushViewController(ZBGetPwdBackedController(), animated: true)
                 
             }

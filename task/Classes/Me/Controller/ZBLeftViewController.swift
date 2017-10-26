@@ -39,12 +39,9 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         userHeaderV.layer.masksToBounds  = true
         view.addSubview(userHeaderV)
         userHeaderV.image = UIImage.init(named: "header")
-        
-          userHeaderV.isUserInteractionEnabled  = true
-        let  pannnn = UITapGestureRecognizer.init(target: self, action: #selector(tapp))
-        
-        //附加识别器到视图
-        userHeaderV.addGestureRecognizer(pannnn)
+        userHeaderV.isUserInteractionEnabled  = true
+        let  tap = UITapGestureRecognizer.init(target: self, action: #selector(tapp))
+        userHeaderV.addGestureRecognizer(tap)
         
         
        //昵称

@@ -102,6 +102,11 @@ class ZBLoginController: UIViewController {
                 UserDefaults.standard.synchronize()
             }
             
+            
+            //极光注册
+            JPUSHService.setAlias(User.GetUser().id, completion: nil, seq: 1)
+            
+            
             SVProgressHUD.dismiss()
               self.dismiss(animated: true, completion: nil)
         }
