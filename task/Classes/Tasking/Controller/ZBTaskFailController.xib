@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBTaskFailController" customModule="task" customModuleProvider="target">
             <connections>
                 <outlet property="backBtn" destination="IfY-Dj-2Tq" id="qaM-nA-bk4"/>
+                <outlet property="reasonT" destination="NHK-oH-myo" id="jUi-VV-1lf"/>
                 <outlet property="reload" destination="Vst-RL-xfz" id="dnS-fM-Dp1"/>
                 <outlet property="view" destination="n5r-6N-yhT" id="fCv-qM-lxv"/>
             </connections>
@@ -40,8 +41,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="也许是图片不够清晰哦~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHK-oH-myo">
-                    <rect key="frame" x="106" y="302" width="163" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHK-oH-myo">
+                    <rect key="frame" x="181" y="302" width="13" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

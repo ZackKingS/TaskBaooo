@@ -25,6 +25,9 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
   
     
     
+    var appStoreUrl :String?
+     var force_update :String?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setRefresh()
@@ -353,7 +356,14 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 let infoDictionary = Bundle.main.infoDictionary
                 let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
                 let json = JSON(value)
+                
+                print(json)
+                
                 let version_name = json["data"]["version_name"].stringValue
+                
+                self.appStoreUrl = json["data"]["package_url"].stringValue
+                self.force_update = json["data"]["force_update"].stringValue
+                
                 if currentAppVersion != version_name {
                     
                     print( "去更新")
@@ -370,20 +380,48 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     fileprivate func compareVersion(_ localVersion: String, storeVersion: String,note:String) {
         let message = "本次更新内容：\n\(note)"
+        
+        
         if localVersion.compare(storeVersion) == ComparisonResult.orderedAscending {
-            let alertView = UIAlertView(title: "发现新版本",message: message,delegate: self as? UIAlertViewDelegate,cancelButtonTitle: nil,otherButtonTitles: "马上更新","下次再说")
-            alertView.delegate = self
-            alertView.tag = 10086
-            alertView.show()
+            
+            if   force_update == "0"   {
+                
+                let alertView = UIAlertView(title: "发现新版本",message: message,delegate: self as? UIAlertViewDelegate,cancelButtonTitle: nil,otherButtonTitles: "马上更新","下次再说")
+                alertView.delegate = self
+                alertView.tag = 10086
+                alertView.show()
+                
+            } else  if force_update == "1"{
+                let alertView = UIAlertView(title: "发现新版本",message: message,delegate: self as? UIAlertViewDelegate,cancelButtonTitle: nil,otherButtonTitles: "马上更新","立即更新")
+                alertView.delegate = self
+                alertView.tag = 10086
+                alertView.show()
+                
+            }
+
         }
     }
     
     func alertView(_ alertView:UIAlertView, clickedButtonAt buttonIndex: Int){
         if(alertView.tag == 10086) {
             if(buttonIndex == 0){
-                UIApplication.shared.openURL(URL(string:"https://itunes.apple.com/cn/app/wei-xin/id414478124?mt=8")!)
+ 
+                if appStoreUrl != nil {
+                      UIApplication.shared.openURL(URL(string:appStoreUrl!)!)
+                }
+                
+              
             }else{
-                //下次再说
+     
+                if   force_update == "0"   {
+                    
+                } else  if force_update == "1"{
+                    if appStoreUrl != nil {
+                        UIApplication.shared.openURL(URL(string:appStoreUrl!)!)
+                    }
+                    
+                }
+              
             }
         }
     }

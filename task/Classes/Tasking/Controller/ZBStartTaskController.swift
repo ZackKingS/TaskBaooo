@@ -83,7 +83,7 @@ class ZBStartTaskController: UIViewController  ,UIImagePickerControllerDelegate,
         let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // change the style sheet text color
-        alert.view.tintColor = UIColor.black
+//        alert.view.tintColor = UIColor.black
         
         let actionCancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
         let actionCamera = UIAlertAction.init(title: "拍照", style: .default) { (UIAlertAction) -> Void in

@@ -14,6 +14,15 @@ class ZBTaskFailController: UIViewController {
     
     var taskid :String?
     
+    var taskName :String?
+    
+    var status :String?
+    
+    
+    @IBOutlet weak var reasonT: UILabel!
+    
+    
+    
     
     @IBOutlet weak var backBtn: UIButton!
     
@@ -32,9 +41,15 @@ class ZBTaskFailController: UIViewController {
     @IBAction func reload(_ sender: Any) {
         
         
-        let start = ZBStartTaskController()
-        start.taskid = taskid
-        navigationController?.pushViewController(start, animated: true)
+
+        
+        let taskDetailController = ViewController()
+        taskDetailController.taskid = taskid
+        taskDetailController.taskName =  taskName
+        taskDetailController.status =  status
+        
+        self.navigationController?.pushViewController(taskDetailController, animated: true)
+        
     }
     
     
@@ -42,6 +57,60 @@ class ZBTaskFailController: UIViewController {
         super.viewDidLoad()
         
         setConfig()
+        
+        
+        
+        getTaskInfo()
+        
+        
+    }
+    
+    
+    func getTaskInfo(){
+        
+        let str  = API_GETTASKDETAIL_URL +  "?id=\(taskid!)&userid=\(User.GetUser().id!)"
+        
+        NetworkTool.getTaskList(url: str, completionHandler: { (json) in
+            /*
+             {
+             "errorno" : 0,
+             "data" : {
+             "status" : -1,
+             "id" : 35,
+             "price" : "5.00",
+             "title" : "仙人掌股票开户",
+             "image" : "http:\/\/pic2.ooopic.com\/11\/70\/93\/49bOOOPIC85_1024.jpg",
+             "start_time" : "2017-09-29 10:45:14",
+             "deadline" : "2017-10-26 10:45:14",
+             "description" : "仙人掌股票开户"
+             },
+             "message" : "success"
+             }
+             */
+            
+             print(json)
+            
+            let dataDict   = json["data"].dictionaryValue
+            
+            print(dataDict)
+            
+            print(dataDict["status"]!.stringValue)
+            print(dataDict["image"]!.stringValue)
+            print(dataDict["reason"]!.stringValue)
+            
+            self.taskName = dataDict["title"]!.stringValue
+            
+               self.status = dataDict["status"]!.stringValue
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() ) {
+                
+                self.reasonT.text =  dataDict["reason"]!.stringValue
+                
+            }
+            
+            
+        })
+        
     }
     
     
