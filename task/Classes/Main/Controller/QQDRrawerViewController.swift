@@ -48,6 +48,7 @@ class QQDRrawerViewController: UIViewController {
             coverButton.setBackgroundImage(UIImage.init(named: "bg"), for: .normal)
             
             coverButton.alpha = 0.4
+     
             self.coverButton = coverButton
             coverButton.frame = CGRect.init(x: 0, y: 64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             coverButton.addTarget(self, action: (#selector(QQDRrawerViewController.closeDrawer)), for: .touchUpInside)
@@ -89,8 +90,16 @@ class QQDRrawerViewController: UIViewController {
         
         let offsetX = pan.translation(in: pan.view).x
         
+ 
+       
+        
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: { 
             if pan.state == UIGestureRecognizerState.changed && offsetX < self.maxWidth! {
+                
+                
+               
+                
+                
                 self.mainViewController?.view.transform = CGAffineTransform.init(translationX: offsetX, y: 0)
                 self.leftViewController?.view.transform = CGAffineTransform.init(translationX: -self.maxWidth! + offsetX, y: 0)
             }else if pan.state == .cancelled || pan.state == .ended || pan.state == .failed {
@@ -104,11 +113,8 @@ class QQDRrawerViewController: UIViewController {
         
     }
     
-    /// 打开抽屉
-    func openDrawer(openDrawerWithDuration: CGFloat) {
-        
-        
-        
+    
+    func checkProfile(){
         
         let login = UserDefaults.standard.object(forKey: ZBLOGIN_KEY)! as! Bool
         
@@ -129,7 +135,7 @@ class QQDRrawerViewController: UIViewController {
                     return
                 }
                 
-                 let dataArr  = json["data"].dictionaryValue
+                let dataArr  = json["data"].dictionaryValue
                 
                 if  dataArr["account"] == nil    ||  dataArr["finished"] == nil  {
                     return
@@ -141,20 +147,27 @@ class QQDRrawerViewController: UIViewController {
                 
             })
         }else{                //未登录
-           let    dataArr  = ["account":"0.0","finished":"0"]
-              NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gotProfile"), object: self, userInfo: ["key": dataArr])
+            let    dataArr  = ["account":"0.0","finished":"0"]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gotProfile"), object: self, userInfo: ["key": dataArr])
         }
         
+    }
+    
+    /// 打开抽屉
+    func openDrawer(openDrawerWithDuration: CGFloat) {
+        
+        checkProfile()
+        
+        print(openDrawerWithDuration)
         
         UIView.animate(withDuration: TimeInterval(openDrawerWithDuration), delay: 0, options: .curveLinear, animations: {
             self.mainViewController?.view.transform = CGAffineTransform.init(translationX: self.maxWidth!, y: 0)
             self.leftViewController?.view.transform = CGAffineTransform.identity
             
-            
+
             }) { (Bool) in
                 
                 self.setCoverButton()  /// 遮罩
-                
                 self.mainViewController?.view.addSubview(self.coverButton!)
         };
     }
@@ -185,6 +198,10 @@ class QQDRrawerViewController: UIViewController {
     /// 拖动手势处理
     func panGestureRecognizer(pan: UIPanGestureRecognizer) {
         let offsetX = pan.translation(in: pan.view).x
+        
+        
+        print(offsetX)
+        
         
         if pan.state == .cancelled || pan.state == .failed || pan.state == .ended {
             

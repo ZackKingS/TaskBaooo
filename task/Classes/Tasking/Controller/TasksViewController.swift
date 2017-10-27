@@ -15,6 +15,7 @@ import MJRefresh
 import StoreKit
 import SVProgressHUD
 import MBProgressHUD
+import UserNotificationsUI
 
 class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate{
 
@@ -49,6 +50,7 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
          setupNavBar()
         addNotifications()
         checkupdate ()
+        
  
     }
     
@@ -122,7 +124,22 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
          NotificationCenter.default.addObserver(self, selector: #selector(gologin), name: NSNotification.Name(rawValue: "gologin"), object: nil)
         
-       
+          NotificationCenter.default.addObserver(self, selector: #selector(forceLogout), name: NSNotification.Name(rawValue: "forceLogout"), object: nil)
+        
+    }
+    
+    
+    @objc  func   forceLogout(){
+        
+        UserDefaults.standard.set(false, forKey: ZBLOGIN_KEY)
+        UserDefaults.standard.synchronize()
+        setRefresh()
+        
+        self.showHint(hint: "您的账号已经在别处登录")
+        
+        let nav = ZBNavVC.init(rootViewController: ZBLoginController())
+        present(nav, animated: true, completion: nil)
+        
         
     }
     

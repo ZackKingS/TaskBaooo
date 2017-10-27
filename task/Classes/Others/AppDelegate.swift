@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AdSupport
+import UserNotificationsUI
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
@@ -54,40 +56,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         
         
         
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {
+                (granted, error) in
+                
+                if granted {
+                    print("User notifications are allowed.")
+                } else {
+                    print("User notifications are not allowed.")
+                }
+            })
+        } else {
+            // Fallback on earlier versions
+        }
+        
+   
+        
+        
+       
+
+        
+      
+      
+        
+        
         return true
     }
+    
+    
+    
+
     
   
     @objc  func networkDidReceiveMessage(notification: Notification) {
         
-            print(notification)
-        
-//        name = kJPUSHNetworkDidReceiveMessageNotification, object = nil, userInfo = Optional([AnyHashable("content"): {"type":1,"data":{"status":2,"taskid":8,"title":"测试任务2","price":"5.00"}}, AnyHashable("content_type"): json])
-        
-       
-        
         let userInfo  = notification.userInfo! as NSDictionary
-        
-         print(userInfo)
-        
         let content  = userInfo.value(forKey: "content") as! String
         
-//        {"type":1,"data":{"status":2,"taskid":8,"title":"测试任务2","price":"5.00"}}
+        print(content)
         
+        //"{\"status\":2,\"taskid\":2,\"title\":\"时代财经app下载试用任务\",\"price\":\"1.00\"}"
+
         let jsonData : Data = content.data(using: .utf8)!
-        
         let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as! NSDictionary
         if dict != nil {
-          
-            let data : NSDictionary = dict?.value(forKey: "data") as! NSDictionary
-            
-            let title = data.value(forKey: "title")
-            
-             print(title!)
+             let type : NSNumber = dict?.value(forKey: "type") as! NSNumber
+            if type == 2 {
+                
+                print("互踢")
+
+                
+              NotificationCenter.default.post(name: NSNotification.Name(rawValue: "forceLogout"), object: self, userInfo: nil)
+                
+                
+            }else if type == 1 {
+                
+                print("自定义")
+            }
+
+//            let data : NSDictionary = dict?.value(forKey: "data") as! NSDictionary
+//
+//            let title = data.value(forKey: "title")
+//
+//            print(title!)
         }
-       
-        
-       
 
     }
     
@@ -131,25 +163,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         print("Notification token: ", deviceToken)
         
  
-            
-//            JPUSHService.registrationIDCompletionHandler({ (resCode, registrationID) in
-        
-                
-                
-//                print(registrationID)
-                
-//                if registrationID != nil {
-//
-//                       UserDefaults.standard.set(registrationID , forKey: JPushID)
-//                }
-                
-             
-                
-//            })
-            
- 
-   
-        
     }
     
     
