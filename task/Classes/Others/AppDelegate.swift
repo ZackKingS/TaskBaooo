@@ -40,7 +40,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         configPush(launchOptions  :launchOptions)
         
         
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(networkDidReceiveMessage(notification:)),  name: NSNotification.Name.jpfNetworkDidReceiveMessage, object: nil)
+        
+        
+      
+        JPUSHService.registrationIDCompletionHandler({ (resCode, registrationID) in
+            
+//            print(registrationID)
+            UserDefaults.standard.set(registrationID , forKey: JPushID)
+            
+        })
+        
+        
+        
         return true
+    }
+    
+  
+    @objc  func networkDidReceiveMessage(notification: Notification) {
+        
+            print(notification)
+        
+//        name = kJPUSHNetworkDidReceiveMessageNotification, object = nil, userInfo = Optional([AnyHashable("content"): {"type":1,"data":{"status":2,"taskid":8,"title":"测试任务2","price":"5.00"}}, AnyHashable("content_type"): json])
+        
+       
+        
+        let userInfo  = notification.userInfo! as NSDictionary
+        
+         print(userInfo)
+        
+        let content  = userInfo.value(forKey: "content") as! String
+        
+//        {"type":1,"data":{"status":2,"taskid":8,"title":"测试任务2","price":"5.00"}}
+        
+        let jsonData : Data = content.data(using: .utf8)!
+        
+        let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as! NSDictionary
+        if dict != nil {
+          
+            let data : NSDictionary = dict?.value(forKey: "data") as! NSDictionary
+            
+            let title = data.value(forKey: "title")
+            
+             print(title!)
+        }
+       
+        
+       
+
     }
     
     func configPush(launchOptions: [UIApplicationLaunchOptionsKey: Any]?){
@@ -82,14 +130,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         JPUSHService.registerDeviceToken(deviceToken as Data!)
         print("Notification token: ", deviceToken)
         
-        
-        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
+ 
             
-            print(User.GetUser().id)
-           
-            JPUSHService.setAlias(User.GetUser().id, completion: nil, seq: 1)
-        }
+//            JPUSHService.registrationIDCompletionHandler({ (resCode, registrationID) in
         
+                
+                
+//                print(registrationID)
+                
+//                if registrationID != nil {
+//
+//                       UserDefaults.standard.set(registrationID , forKey: JPushID)
+//                }
+                
+             
+                
+//            })
+            
+ 
    
         
     }
@@ -107,6 +165,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         
         JPUSHService.handleRemoteNotification(userInfo);
         completionHandler(UIBackgroundFetchResult.newData);
+        
+        print(userInfo)
+        
     }
     
     
@@ -223,6 +284,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
                     self.window?.makeKeyAndVisible()
                 }
         
+    }
+    
+    
+    deinit {
+        
+            NotificationCenter.default.removeObserver(NSNotification.Name.jpfNetworkDidReceiveMessage)
     }
 
 }

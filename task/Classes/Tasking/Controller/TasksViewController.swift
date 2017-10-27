@@ -122,6 +122,8 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "refresh"), object: nil)
          NotificationCenter.default.addObserver(self, selector: #selector(gologin), name: NSNotification.Name(rawValue: "gologin"), object: nil)
         
+       
+        
     }
     
     @objc  func   gologin(){
@@ -356,20 +358,14 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 let infoDictionary = Bundle.main.infoDictionary
                 let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
                 let json = JSON(value)
-                
-                print(json)
-                
+           
                 let version_name = json["data"]["version_name"].stringValue
-                
                 self.appStoreUrl = json["data"]["package_url"].stringValue
                 self.force_update = json["data"]["force_update"].stringValue
                 
                 if currentAppVersion != version_name {
-                    
-                    print( "去更新")
-                    
+            
                     let des = json["data"]["update_state"].stringValue
-                    
                     self.compareVersion(currentAppVersion, storeVersion: version_name, note: des)
                     
                 }

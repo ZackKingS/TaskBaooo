@@ -54,9 +54,30 @@ class ZBLoginController: UIViewController {
         var final_pwd = (phone_last5 as String).MD5 + (pwdTF.text?.MD5)!
         final_pwd = final_pwd.MD5
         
-        let para = ["tel":phoneTF.text!,"password":final_pwd] as [String : AnyObject]
+//        let para = ["tel":phoneTF.text!,"password":final_pwd] as [String : AnyObject]
 
-        NetworkTool.postMesa(url: API_LOGIN_URL, parameters: para) { (value) in
+        
+        
+        let jpush_id = UserDefaults.standard.object(forKey: JPushID)
+        
+        print(jpush_id!)
+         let para = ["tel":phoneTF.text!,
+                     "password":final_pwd,
+                     "jpush_id": jpush_id!
+                     
+            
+            ] as [String : AnyObject]
+        
+     
+        
+        let url = "/v1/user/login"
+        let key = SecureTool.reKey(url: url)
+        let timestamp :String = SecureTool.reTimestamp()
+        let uuid = ASIdentifierManager.shared().advertisingIdentifier.uuidString as NSString
+        let    str = "\(API_LOGIN_URL)?&key=\(key)&t=\(timestamp)&imei=\((uuid as String))"
+        
+        
+        NetworkTool.postMesa(url: str, parameters: para) { (value) in
             let json = JSON(value ?? "123")
             
             
@@ -75,21 +96,7 @@ class ZBLoginController: UIViewController {
 //                SVProgressHUD.dismiss(withDelay: TimeInterval.init(1))
                 return
             }
-//            else if errorStr ==  "20031" {
-//                SVProgressHUD.showError(withStatus: json["message"].stringValue)
-//                   SVProgressHUD.dismiss(withDelay: TimeInterval.init(1))
-//                return
-//            }else if errorStr ==  "20032" {
-//                SVProgressHUD.showError(withStatus: json["message"].stringValue)
-//                   SVProgressHUD.dismiss(withDelay: TimeInterval.init(1))
-//                return
-//            }else if errorStr ==  "20030" {
-//                SVProgressHUD.showError(withStatus: json["message"].stringValue)
-//                SVProgressHUD.dismiss(withDelay: TimeInterval.init(1))
-//                return
-//            }
-            
-          
+
             
             let dataDict   = json["data"].dictionaryValue
             let user : User = User.init(dict: (dataDict as [String : JSON] ))

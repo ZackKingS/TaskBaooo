@@ -110,7 +110,7 @@ let USER = "user"
 
 let JPushAppKey = "7f0278e3db3e0f2559492e9d"
 
-
+let JPushID = "JPushID"
 
 //MARK: 测试接口
 //----------------   用户接口---------------------------
@@ -122,7 +122,7 @@ let BaseURL = "http://61.183.83.170:30001/"
 //短信
 let API_GETSMS_URL = BaseURL + "v1/user/smsverify"
 //注册
-let API_REGISTE_URL = BaseURL + "v1/user/Register"
+let API_REGISTE_URL = BaseURL + "v1/user/register"
 //登录
 let API_LOGIN_URL = BaseURL + "v1/user/login"
 //找回
@@ -136,6 +136,10 @@ let API_GETPROFILE_URL = BaseURL + "v1/user/profile"
 
 //退出
 let API_LOGOUT_URL = BaseURL +  "/v1/user/logout"
+
+
+//互踢
+let API_KICK_URL = BaseURL +  "/v1/user/kick"
 
 
 //----------------   任务接口---------------------------

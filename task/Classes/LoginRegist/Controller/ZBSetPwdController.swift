@@ -98,15 +98,32 @@ class ZBSetPwdController: UIViewController ,UITextFieldDelegate  {
             final_pwd = final_pwd.MD5
             
             
-            
+              let jpush_id = UserDefaults.standard.object(forKey: JPushID)
               SVProgressHUD.show()
-            let para =  ["tel":phone!,"verifycode":sms! ,"nickname" : nickName!,"password":final_pwd]  as [String : AnyObject]
+            let para =  ["tel":phone!,
+                         "verifycode":sms! ,
+                         "nickname" : nickName!,
+                         "password":final_pwd,
+                         "jpush_id": jpush_id!
+                         
+                
+                ]  as [String : AnyObject]
+            
+            
+            
+            let url = "/v1/user/register"
+            let key = SecureTool.reKey(url: url)
+            let timestamp :String = SecureTool.reTimestamp()
+            let uuid = ASIdentifierManager.shared().advertisingIdentifier.uuidString as NSString
+            let    str = "\(API_REGISTE_URL)?&key=\(key)&t=\(timestamp)&imei=\((uuid as String))"
           
-            NetworkTool.postMesa(url: API_REGISTE_URL, parameters: para) { (value) in
+            NetworkTool.postMesa(url: str, parameters: para) { (value) in
               
                 let json = JSON(value ?? "123")
                 let dataDict   = json["data"].dictionaryValue
                 
+                
+                print(json)
                 
                 
                 let user : User = User.init(dict: (dataDict as [String : JSON] ))
@@ -165,12 +182,32 @@ class ZBSetPwdController: UIViewController ,UITextFieldDelegate  {
             var final_pwd = (phone_last5 as String).MD5 + (pwd_s.text?.MD5)!
             final_pwd = final_pwd.MD5
             
+            let jpush_id = UserDefaults.standard.object(forKey: JPushID)
+            
             SVProgressHUD.show()
-            let para =  ["tel":phone!,"verifycode":sms! ,"password":final_pwd]  as [String : AnyObject]
+            let para =  ["tel":phone!,
+                         "verifycode":sms! ,
+                         "password":final_pwd,
+                         "jpush_id":jpush_id!
+                         
+                
+                
+                ]  as [String : AnyObject]
             
             print(para)
             
-            NetworkTool.postMesa(url: API_GETPWDBACK_URL, parameters: para) { (value) in
+            
+            
+            
+            let url = "/v1/user/resetpwd"
+            let key = SecureTool.reKey(url: url)
+            let timestamp :String = SecureTool.reTimestamp()
+            let uuid = ASIdentifierManager.shared().advertisingIdentifier.uuidString as NSString
+            let    str = "\(API_GETPWDBACK_URL)?&key=\(key)&t=\(timestamp)&imei=\((uuid as String))"
+            
+            
+            
+            NetworkTool.postMesa(url: str, parameters: para) { (value) in
                 
             
                  SVProgressHUD.dismiss()
