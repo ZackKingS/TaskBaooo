@@ -143,7 +143,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4t3-Nb-cfJ">
-                                                    <rect key="frame" x="144" y="263" width="212" height="40"/>
+                                                    <rect key="frame" x="144" y="234.5" width="212" height="40"/>
                                                     <color key="backgroundColor" red="0.9029733539" green="0.46237200499999997" blue="0.111700587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="212" id="X8W-sg-gpp"/>
@@ -157,7 +157,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4t3-Nb-cfJ" firstAttribute="centerX" secondItem="AFY-h5-U6d" secondAttribute="centerX" id="D9X-uz-u8V"/>
-                                                <constraint firstAttribute="bottom" secondItem="4t3-Nb-cfJ" secondAttribute="bottom" constant="131.5" id="mHd-uC-jGw"/>
+                                                <constraint firstAttribute="bottom" secondItem="4t3-Nb-cfJ" secondAttribute="bottom" constant="160" id="mHd-uC-jGw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
