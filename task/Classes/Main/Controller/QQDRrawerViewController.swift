@@ -47,7 +47,7 @@ class QQDRrawerViewController: UIViewController {
             
             coverButton.setBackgroundImage(UIImage.init(named: "bg"), for: .normal)
             
-            coverButton.alpha = 0.4
+            coverButton.alpha =  0.2
      
             self.coverButton = coverButton
             coverButton.frame = CGRect.init(x: 0, y: 64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -89,19 +89,14 @@ class QQDRrawerViewController: UIViewController {
     func screenEdgePanGestureRecognizer(pan: UIScreenEdgePanGestureRecognizer) {
         
         let offsetX = pan.translation(in: pan.view).x
-        
- 
-       
-        
+
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: { 
             if pan.state == UIGestureRecognizerState.changed && offsetX < self.maxWidth! {
                 
-                
-               
-                
-                
                 self.mainViewController?.view.transform = CGAffineTransform.init(translationX: offsetX, y: 0)
                 self.leftViewController?.view.transform = CGAffineTransform.init(translationX: -self.maxWidth! + offsetX, y: 0)
+                
+                
             }else if pan.state == .cancelled || pan.state == .ended || pan.state == .failed {
                 if offsetX > UIScreen.main.bounds.width * 0.5 {
                     self.openDrawer(openDrawerWithDuration: (self.maxWidth! - offsetX)/self.maxWidth! * 0.2)
@@ -157,6 +152,8 @@ class QQDRrawerViewController: UIViewController {
     func openDrawer(openDrawerWithDuration: CGFloat) {
         
         checkProfile()
+        
+       
         
         print(openDrawerWithDuration)
         
