@@ -57,6 +57,31 @@ class QQDRrawerViewController: UIViewController {
         }
     }
  
+    
+    
+    /// 创建遮罩按钮
+    func setCoverButton(alp: CGFloat) {
+        
+        guard self.coverButton != nil else {
+            //  创建遮罩按钮
+            let coverButton = UIButton.init()
+            
+            
+            
+            coverButton.setBackgroundImage(UIImage.init(named: "bg"), for: .normal)
+            
+            
+            print("++++++++\(alp)")
+//            coverButton.backgroundColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: alp)
+            coverButton.alpha =  alp
+            
+            self.coverButton = coverButton
+            coverButton.frame = CGRect.init(x: 0, y: 64, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            coverButton.addTarget(self, action: (#selector(QQDRrawerViewController.closeDrawer)), for: .touchUpInside)
+            addPanGestureRecognizer(view: coverButton)
+            return
+        }
+    }
 
     class func drawerWithViewController(_leftViewcontroller : ZBLeftViewController,_mainViewController : ZBNavVC, DrawerMaxWithd: CGFloat) -> QQDRrawerViewController{
         let drawerViewController = QQDRrawerViewController.sharedDrawerViewController
@@ -92,6 +117,15 @@ class QQDRrawerViewController: UIViewController {
 
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: { 
             if pan.state == UIGestureRecognizerState.changed && offsetX < self.maxWidth! {
+                
+                print(offsetX / screenWidth)
+                
+                
+//                 self.setCoverButton(alp:  offsetX / screenWidth )
+////
+//                  self.mainViewController?.view.addSubview(self.coverButton!)
+                
+
                 
                 self.mainViewController?.view.transform = CGAffineTransform.init(translationX: offsetX, y: 0)
                 self.leftViewController?.view.transform = CGAffineTransform.init(translationX: -self.maxWidth! + offsetX, y: 0)
@@ -151,17 +185,13 @@ class QQDRrawerViewController: UIViewController {
     /// 打开抽屉
     func openDrawer(openDrawerWithDuration: CGFloat) {
         
+        //查看个人信息
         checkProfile()
-        
-       
-        
-        print(openDrawerWithDuration)
         
         UIView.animate(withDuration: TimeInterval(openDrawerWithDuration), delay: 0, options: .curveLinear, animations: {
             self.mainViewController?.view.transform = CGAffineTransform.init(translationX: self.maxWidth!, y: 0)
             self.leftViewController?.view.transform = CGAffineTransform.identity
             
-
             }) { (Bool) in
                 
                 self.setCoverButton()  /// 遮罩

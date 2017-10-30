@@ -116,7 +116,10 @@ let JPushID = "JPushID"
 //----------------   用户接口---------------------------
 //let BaseURL = "http://taskbao.dev.cnfol.wh/"
 
-let BaseURL = "http://61.183.83.170:30001/"
+//let BaseURL = "http://61.183.83.170:30001/"
+
+let BaseURL = "http://54.222.197.249:7272/"
+
 
 
 //短信

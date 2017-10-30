@@ -66,10 +66,10 @@
         NSLog(@"%d",login);
         
         if (login) {
-             str = [NSString stringWithFormat:@"http://61.183.83.170:30001/v1/task/one?userid=%@&id=%@",[User GetUser].id ,self.taskid];
+             str = [NSString stringWithFormat:@"http://54.222.197.249:7272/v1/task/one?userid=%@&id=%@",[User GetUser].id ,self.taskid];
         }else{
             
-              str = [NSString stringWithFormat:@"http://61.183.83.170:30001/v1/task/one?id=%@" ,self.taskid];
+              str = [NSString stringWithFormat:@"http://54.222.197.249:7272/v1/task/one?id=%@" ,self.taskid];
         }
         
         
