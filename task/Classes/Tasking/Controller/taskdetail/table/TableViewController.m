@@ -30,6 +30,10 @@
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
+    
+    self.tableView.allowsSelection = NO;
+    
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showinfo:) name:@"taskInfo" object:nil];
 }
 
@@ -81,8 +85,7 @@
 {
     
     return self.textFieldHeight + 200;
-    
-//    return 1200;
+
 }
 
 

@@ -30,6 +30,8 @@
     [self.tableView registerNib: [UINib nibWithNibName:@"SecondTableViewCell" bundle:nil] forCellReuseIdentifier:@"xxx"];
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
+    self.tableView.allowsSelection = NO;
 }
 
 - (void)didReceiveMemoryWarning {
