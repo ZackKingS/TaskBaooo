@@ -90,18 +90,22 @@ class ZBRegistViewController: UIViewController ,UITextFieldDelegate {
         let str = API_GETSMS_URL + "?tel=\(phoneNumL.text!)&action=0"
         NetworkTool.getMesa( url: str  ){ (result) in
 
-            SVProgressHUD.showSuccess(withStatus: "")
-            SVProgressHUD.dismiss(withDelay: TimeInterval.init(1))
+      
             
             print(result ?? "213")
             
             let json  = result as! JSON
             
-            let errorno  = json["data"].stringValue
+            let errorno  = json["errorno"].stringValue
             
             if errorno != "20013"{ //没有注册的话
                 
                    sender.startCountDown()
+                SVProgressHUD.showSuccess(withStatus: "")
+                SVProgressHUD.dismiss(withDelay: TimeInterval.init(1))
+            }else{
+                
+                self.showHint(hint: json["message"].stringValue)
             }
         }
     }

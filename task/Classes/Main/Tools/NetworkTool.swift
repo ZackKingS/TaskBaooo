@@ -56,15 +56,18 @@ class NetworkTool: NetworkToolProtocol {
                 
                 let json = JSON(value)
                 
-                let str = json["message"].stringValue
+//                let str = json["message"].stringValue
                 
-                if str ==  "success"{
-                    
-                    print(json)
-                    completionHandler(json)
-                  }else{
-                    SVProgressHUD.showError(withStatus: json["message"].stringValue)
-                }
+                
+                 completionHandler(json)
+//
+//                if str ==  "success"{
+//
+//                    print(json)
+//                    completionHandler(json)
+//                  }else{
+////                    SVProgressHUD.showError(withStatus: json["message"].stringValue)
+//                }
                 
                
             }
