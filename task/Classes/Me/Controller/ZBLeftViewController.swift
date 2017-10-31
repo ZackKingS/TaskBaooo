@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import AdSupport
 import  SwiftyJSON
+import MBProgressHUD
 class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
     
@@ -148,8 +149,9 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     func withDraw(){
         
-        self.showHint(hint: "开发中..")
+        self.showHintt(hint: "开发中..")
         
+  
     }
     
     

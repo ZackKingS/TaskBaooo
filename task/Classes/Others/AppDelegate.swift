@@ -72,14 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         
    
         
-        
-       
-
-        
-      
-      
-        
-        
         return true
     }
     

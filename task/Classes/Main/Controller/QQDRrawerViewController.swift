@@ -94,7 +94,7 @@ class QQDRrawerViewController: UIViewController {
         drawerViewController.addChildViewController(_leftViewcontroller)
         
         drawerViewController.view.addSubview(_mainViewController.view)
-        drawerViewController .addChildViewController(_mainViewController)
+        drawerViewController.addChildViewController(_mainViewController)
         
         return drawerViewController
     }

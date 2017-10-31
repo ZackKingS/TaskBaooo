@@ -25,6 +25,24 @@ extension UIViewController{
     }
     
     
+    func showHintt(hint :String ){
+        //只显示文字
+        
+        
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = MBProgressHUDMode.text
+        hud.label.text = hint
+        hud.margin = 10
+        hud.offset.y = 150
+        hud.removeFromSuperViewOnHide = true
+        hud.hide(animated: true, afterDelay: 3)
+        
+        
+//        UIApplication.shared.m
+        
+    }
+    
+    
     
 }
 
