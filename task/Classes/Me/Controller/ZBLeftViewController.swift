@@ -148,10 +148,10 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func withDraw(){
+       
+        NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "withdraw")))
         
-        self.showHintt(hint: "开发中..")
         
-  
     }
     
     

@@ -126,6 +126,26 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
           NotificationCenter.default.addObserver(self, selector: #selector(forceLogout), name: NSNotification.Name(rawValue: "forceLogout"), object: nil)
         
+         NotificationCenter.default.addObserver(self, selector: #selector(withdraw), name: NSNotification.Name(rawValue: "withdraw"), object: nil)
+        
+    }
+    
+    
+    @objc  func   withdraw(){
+        
+               QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+//        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
+        
+            let withdraw =  ZBWithDrawController()
+            navigationController?.pushViewController(withdraw, animated: true)
+//        }else{
+//
+//            let nav = ZBNavVC.init(rootViewController: ZBLoginController())
+//            present(nav, animated: true, completion: nil)
+//        }
+       
+    
+        
     }
     
     

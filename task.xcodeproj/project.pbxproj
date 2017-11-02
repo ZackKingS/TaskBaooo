@@ -57,6 +57,10 @@
 		3A506E7F1F7A4240004DF7C3 /* ZBSetingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A506E7E1F7A4240004DF7C3 /* ZBSetingController.swift */; };
 		3A506E811F7A4279004DF7C3 /* ZBSetingController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A506E801F7A4279004DF7C3 /* ZBSetingController.storyboard */; };
 		3A506E831F7A53E0004DF7C3 /* ZBCleanTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A506E821F7A53E0004DF7C3 /* ZBCleanTool.swift */; };
+		3A53865D1FAAF43E00F37F84 /* ZBWithDrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53865C1FAAF43E00F37F84 /* ZBWithDrawController.swift */; };
+		3A53865F1FAAF47400F37F84 /* ZBWithDrawController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A53865E1FAAF47400F37F84 /* ZBWithDrawController.xib */; };
+		3A5386611FAAFD4400F37F84 /* ZBReadytToDrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5386601FAAFD4400F37F84 /* ZBReadytToDrawController.swift */; };
+		3A5386631FAAFD8800F37F84 /* ZBReadytToDrawController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */; };
 		3A5CD30F1F7F374500B706CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD3061F7F374300B706CB /* ViewController.m */; };
 		3A5CD3101F7F374500B706CB /* TCPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD3081F7F374300B706CB /* TCPagesView.m */; };
 		3A5CD3111F7F374500B706CB /* TcPrgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD30B1F7F374400B706CB /* TcPrgressView.m */; };
@@ -166,6 +170,10 @@
 		3A506E7E1F7A4240004DF7C3 /* ZBSetingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBSetingController.swift; sourceTree = "<group>"; };
 		3A506E801F7A4279004DF7C3 /* ZBSetingController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZBSetingController.storyboard; sourceTree = "<group>"; };
 		3A506E821F7A53E0004DF7C3 /* ZBCleanTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBCleanTool.swift; sourceTree = "<group>"; };
+		3A53865C1FAAF43E00F37F84 /* ZBWithDrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBWithDrawController.swift; sourceTree = "<group>"; };
+		3A53865E1FAAF47400F37F84 /* ZBWithDrawController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBWithDrawController.xib; sourceTree = "<group>"; };
+		3A5386601FAAFD4400F37F84 /* ZBReadytToDrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBReadytToDrawController.swift; sourceTree = "<group>"; };
+		3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBReadytToDrawController.xib; sourceTree = "<group>"; };
 		3A5CD3021F7F371600B706CB /* task-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "task-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A5CD3061F7F374300B706CB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3A5CD3071F7F374300B706CB /* TCPagesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCPagesView.h; sourceTree = "<group>"; };
@@ -289,6 +297,10 @@
 				3A0C17211F8B437F0081C54C /* ZBBanlanceController.swift */,
 				3AD1BC951F99DB280082D0ED /* ZBAboutMe.swift */,
 				3AD1BC991F99DB450082D0ED /* ZBAboutMe.xib */,
+				3A53865C1FAAF43E00F37F84 /* ZBWithDrawController.swift */,
+				3A53865E1FAAF47400F37F84 /* ZBWithDrawController.xib */,
+				3A5386601FAAFD4400F37F84 /* ZBReadytToDrawController.swift */,
+				3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -677,6 +689,8 @@
 				3A3E6AAC1F7B73280025E63B /* ZBStartTaskController.xib in Resources */,
 				3A111CAB1F7A2C0F00675991 /* ZBSetPwdController.xib in Resources */,
 				3AE78DFF1F96EC3800F80497 /* ZBNewFeatureController.storyboard in Resources */,
+				3A53865F1FAAF47400F37F84 /* ZBWithDrawController.xib in Resources */,
+				3A5386631FAAFD8800F37F84 /* ZBReadytToDrawController.xib in Resources */,
 				3A3BB4D01F8C5CB600B87EB4 /* TaskDetailCell.xib in Resources */,
 				3A3E6A9E1F7B3B8B0025E63B /* ZBGetPwdBackedController.xib in Resources */,
 				3A3E6AA01F7B4F120025E63B /* TaskDetailViewController.xib in Resources */,
@@ -794,9 +808,11 @@
 				3A0C17221F8B437F0081C54C /* ZBBanlanceController.swift in Sources */,
 				3A5CD3111F7F374500B706CB /* TcPrgressView.m in Sources */,
 				3A3C9C341F74ED620080DA70 /* TasksCell.swift in Sources */,
+				3A5386611FAAFD4400F37F84 /* ZBReadytToDrawController.swift in Sources */,
 				3AD3FBE71F6BE543007406E1 /* TopicViewController.swift in Sources */,
 				3A41A9551F9484660004A30B /* CountDownBtn.swift in Sources */,
 				3A5CD3101F7F374500B706CB /* TCPagesView.m in Sources */,
+				3A53865D1FAAF43E00F37F84 /* ZBWithDrawController.swift in Sources */,
 				3A3BB4D31F8C606F00B87EB4 /* SecondTableViewController.m in Sources */,
 				3A4531271F945D110069B97F /* UIViewController+ZBHUD.swift in Sources */,
 				3A097CBC1F6FB9B800222AEA /* LLPillPageControl.swift in Sources */,
