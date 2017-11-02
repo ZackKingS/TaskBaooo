@@ -42,7 +42,20 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
     
     
     
+    
+    
     @IBAction func next(_ sender: Any) {
+        
+        
+        if  Int(amountT.text!)!  < 100 {
+            
+            self.showHint(hint: "提现金额请高于100元")
+            return
+        }
+        
+        let result =  ZBDrawController()
+        
+        navigationController?.pushViewController(result, animated: true)
         
         
     }

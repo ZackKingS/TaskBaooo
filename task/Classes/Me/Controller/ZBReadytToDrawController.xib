@@ -119,6 +119,12 @@
                         <action selector="next:" destination="-1" eventType="touchUpInside" id="oO5-sP-S7P"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注：提现金额请高于100元，并确保银行卡信息无误。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-hu-oS5">
+                    <rect key="frame" x="16" y="453" width="314" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59274553571428568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -147,8 +153,10 @@
                 <constraint firstItem="dM1-px-kS5" firstAttribute="leading" secondItem="lfB-nB-fpZ" secondAttribute="trailing" constant="15" id="dgD-Im-UV8"/>
                 <constraint firstAttribute="bottom" secondItem="mkT-UO-5ks" secondAttribute="bottom" constant="87" id="gAf-uV-2WE"/>
                 <constraint firstItem="bEV-ho-GSH" firstAttribute="top" secondItem="4CN-Ge-PsQ" secondAttribute="bottom" constant="19" id="jUc-BT-DVp"/>
+                <constraint firstItem="xrT-hu-oS5" firstAttribute="top" secondItem="bEV-ho-GSH" secondAttribute="bottom" constant="8" id="jzb-IT-vXc"/>
                 <constraint firstItem="FAN-8i-75I" firstAttribute="top" secondItem="WYx-Bt-djy" secondAttribute="bottom" constant="22" id="k8e-AB-QvG"/>
                 <constraint firstItem="c7F-Gm-woJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mEy-GB-oH2"/>
+                <constraint firstItem="xrT-hu-oS5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="mGz-zN-9dX"/>
                 <constraint firstAttribute="trailing" secondItem="yPT-oy-BDm" secondAttribute="trailing" id="rZw-tf-Psl"/>
                 <constraint firstItem="c8P-LU-ggM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="ruw-lQ-trf"/>
                 <constraint firstItem="c7F-Gm-woJ" firstAttribute="top" secondItem="FAN-8i-75I" secondAttribute="bottom" constant="18" id="sn4-tb-rfG"/>

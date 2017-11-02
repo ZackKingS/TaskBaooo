@@ -61,6 +61,8 @@
 		3A53865F1FAAF47400F37F84 /* ZBWithDrawController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A53865E1FAAF47400F37F84 /* ZBWithDrawController.xib */; };
 		3A5386611FAAFD4400F37F84 /* ZBReadytToDrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5386601FAAFD4400F37F84 /* ZBReadytToDrawController.swift */; };
 		3A5386631FAAFD8800F37F84 /* ZBReadytToDrawController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */; };
+		3A5386651FAB061800F37F84 /* ZBDrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5386641FAB061800F37F84 /* ZBDrawController.swift */; };
+		3A5386671FAB064D00F37F84 /* ZBDrawController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5386661FAB064D00F37F84 /* ZBDrawController.xib */; };
 		3A5CD30F1F7F374500B706CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD3061F7F374300B706CB /* ViewController.m */; };
 		3A5CD3101F7F374500B706CB /* TCPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD3081F7F374300B706CB /* TCPagesView.m */; };
 		3A5CD3111F7F374500B706CB /* TcPrgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD30B1F7F374400B706CB /* TcPrgressView.m */; };
@@ -174,6 +176,8 @@
 		3A53865E1FAAF47400F37F84 /* ZBWithDrawController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBWithDrawController.xib; sourceTree = "<group>"; };
 		3A5386601FAAFD4400F37F84 /* ZBReadytToDrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBReadytToDrawController.swift; sourceTree = "<group>"; };
 		3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBReadytToDrawController.xib; sourceTree = "<group>"; };
+		3A5386641FAB061800F37F84 /* ZBDrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBDrawController.swift; sourceTree = "<group>"; };
+		3A5386661FAB064D00F37F84 /* ZBDrawController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBDrawController.xib; sourceTree = "<group>"; };
 		3A5CD3021F7F371600B706CB /* task-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "task-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A5CD3061F7F374300B706CB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3A5CD3071F7F374300B706CB /* TCPagesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCPagesView.h; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 				3A53865E1FAAF47400F37F84 /* ZBWithDrawController.xib */,
 				3A5386601FAAFD4400F37F84 /* ZBReadytToDrawController.swift */,
 				3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */,
+				3A5386641FAB061800F37F84 /* ZBDrawController.swift */,
+				3A5386661FAB064D00F37F84 /* ZBDrawController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3E6AB41F7B80140025E63B /* ZBTaskSuccessController.xib in Resources */,
+				3A5386671FAB064D00F37F84 /* ZBDrawController.xib in Resources */,
 				3A3E6AAC1F7B73280025E63B /* ZBStartTaskController.xib in Resources */,
 				3A111CAB1F7A2C0F00675991 /* ZBSetPwdController.xib in Resources */,
 				3AE78DFF1F96EC3800F80497 /* ZBNewFeatureController.storyboard in Resources */,
@@ -786,6 +793,7 @@
 				3A3E6A9A1F7B39FA0025E63B /* ZBGetPwdBackedController.swift in Sources */,
 				3A506E7F1F7A4240004DF7C3 /* ZBSetingController.swift in Sources */,
 				3A3E6AB21F7B7FE20025E63B /* ZBTaskSuccessController.swift in Sources */,
+				3A5386651FAB061800F37F84 /* ZBDrawController.swift in Sources */,
 				3A839E7A1F6BDCAC0024B9B0 /* AppDelegate.swift in Sources */,
 				3A111CA51F7A0A6D00675991 /* ZBForgotPwdController.swift in Sources */,
 				3A111CA91F7A2C0400675991 /* ZBSetPwdController.swift in Sources */,

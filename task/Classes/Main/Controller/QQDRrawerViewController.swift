@@ -132,7 +132,7 @@ class QQDRrawerViewController: UIViewController {
                 
                 
             }else if pan.state == .cancelled || pan.state == .ended || pan.state == .failed {
-                if offsetX > UIScreen.main.bounds.width * 0.5 {
+                if offsetX > 20 {  //UIScreen.main.bounds.width * 0.5
                     self.openDrawer(openDrawerWithDuration: (self.maxWidth! - offsetX)/self.maxWidth! * 0.2)
                 }else {
                     self.closeDrawer(closeDrawerWithDuration: offsetX / self.maxWidth! * 0.2)

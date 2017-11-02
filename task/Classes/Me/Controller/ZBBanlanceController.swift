@@ -315,6 +315,15 @@ class ZBBanlanceController: UIViewController,UITableViewDelegate,UITableViewData
     
     func withdrew(){
         
+
+        //如果绑定了银行卡
+//        navigationController?.pushViewController(ZBReadytToDrawController(), animated: true)
+        
+        //如果没有绑定银行卡
+        
+        navigationController?.pushViewController(ZBWithDrawController(), animated: true)
+        
+        
         
     }
     

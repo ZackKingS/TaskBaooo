@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBDrawController" customModule="task" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="Prs-eA-KDI" id="ZjL-wb-ygW"/>
+                <outlet property="view" destination="iN0-l3-epB" id="YxR-Ig-9Q2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="largeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kzh-hv-hK4">
+                    <rect key="frame" x="146" y="39" width="83" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="Jxd-lK-i2k"/>
+                        <constraint firstAttribute="height" constant="83" id="dmh-Le-nJL"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已经成功发起提现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP6-rZ-i3I">
+                    <rect key="frame" x="118" y="169" width="139" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提现金额为" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXU-6d-mph">
+                    <rect key="frame" x="144" y="212" width="87" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="若银行卡信息无误，预计3-5个工作日到账" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1f-Bw-e8E">
+                    <rect key="frame" x="26" y="323" width="323" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3b-un-19w">
+                    <rect key="frame" x="156" y="259" width="64.5" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Prs-eA-KDI">
+                    <rect key="frame" x="81.5" y="441" width="212" height="47"/>
+                    <color key="backgroundColor" red="0.96789413690000003" green="0.84045904869999999" blue="0.73061710599999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="212" id="AOZ-pA-CH2"/>
+                        <constraint firstAttribute="height" constant="47" id="xlM-lQ-tAR"/>
+                    </constraints>
+                    <state key="normal" title="回首页"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="pkm-3O-9t3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="c1f-Bw-e8E" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Bu4-n7-W6l"/>
+                <constraint firstItem="fP6-rZ-i3I" firstAttribute="top" secondItem="kzh-hv-hK4" secondAttribute="bottom" constant="47" id="CaU-gh-Ulg"/>
+                <constraint firstAttribute="bottom" secondItem="Prs-eA-KDI" secondAttribute="bottom" constant="179" id="Td7-pf-jDP"/>
+                <constraint firstItem="o3b-un-19w" firstAttribute="top" secondItem="TXU-6d-mph" secondAttribute="bottom" constant="26" id="Vjl-tX-lJb"/>
+                <constraint firstItem="TXU-6d-mph" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aV8-77-nyy"/>
+                <constraint firstItem="kzh-hv-hK4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="39" id="cHZ-OV-ZKs"/>
+                <constraint firstItem="o3b-un-19w" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cig-nz-OiQ"/>
+                <constraint firstItem="c1f-Bw-e8E" firstAttribute="top" secondItem="o3b-un-19w" secondAttribute="bottom" constant="35" id="cwy-Hx-kJG"/>
+                <constraint firstItem="TXU-6d-mph" firstAttribute="top" secondItem="fP6-rZ-i3I" secondAttribute="bottom" constant="22" id="ebK-Sh-7IC"/>
+                <constraint firstItem="Prs-eA-KDI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mfJ-cC-HzF"/>
+                <constraint firstItem="kzh-hv-hK4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="t3a-JD-OKS"/>
+                <constraint firstItem="fP6-rZ-i3I" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="x4I-mc-jcv"/>
+            </constraints>
+            <point key="canvasLocation" x="130.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="largeLogo" width="1024" height="1024"/>
+    </resources>
+</document>
