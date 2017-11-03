@@ -205,6 +205,10 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
             var dic  = notification.userInfo!["key"]!  as!  [String : JSON]
             let finished = "\(dic["finished"]!.stringValue)项"
             let account = "\(dic["account"]!.stringValue)元"
+            
+            
+            UserDefaults.standard.set(account, forKey: "USER_BALANCE")
+            
              self.rightDataArray = [ finished, account]
             
               userNameL.text = User.GetUser().nickname

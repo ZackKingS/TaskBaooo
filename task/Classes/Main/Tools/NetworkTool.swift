@@ -92,10 +92,8 @@ class NetworkTool: NetworkToolProtocol {
             }
             if let value = response.result.value {
                 
-              
                 let json = JSON(value)
-                
-              
+        
                 completionHandler(json)
             }
         }

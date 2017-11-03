@@ -316,13 +316,16 @@ class ZBBanlanceController: UIViewController,UITableViewDelegate,UITableViewData
     func withdrew(){
         
 
-        //如果绑定了银行卡
-//        navigationController?.pushViewController(ZBReadytToDrawController(), animated: true)
-        
-        //如果没有绑定银行卡
-        
-        navigationController?.pushViewController(ZBWithDrawController(), animated: true)
-        
+        if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
+            
+            let withdraw =  ZBReadytToDrawController()
+            navigationController?.pushViewController(withdraw, animated: true)
+            
+        }else {  //未绑定
+            let withdraw =  ZBWithDrawController()
+            navigationController?.pushViewController(withdraw, animated: true)
+        }
+     
         
         
     }

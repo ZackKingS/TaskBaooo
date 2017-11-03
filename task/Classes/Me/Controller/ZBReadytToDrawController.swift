@@ -16,7 +16,9 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
     
     var name :String?
     
-
+    
+    @IBOutlet weak var balanceT: UILabel!
+    
     @IBOutlet weak var bankNumL: UILabel!
     
     @IBOutlet weak var nameL: UILabel!
@@ -33,7 +35,49 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
         bankNumL.text = card
         nameL.text = name
         
+        
+//        checkbalance()
+        
+        
+       let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE")
+        
+        balanceT.text = " ¥ \(balance!)"
+        
+       
+        
     }
+    
+    
+    
+    func checkbalance(){
+        
+
+        
+        let str = SecureTool.finalStr(short_url: "profile", full_url: API_GETPROFILE_URL)
+        
+        NetworkTool.getTaskList(url: str, completionHandler: { (json) in
+            
+            print(json)
+            
+            if json["message"].stringValue != "success"{
+                
+                return
+            }
+            
+            let dataArr  = json["data"].dictionaryValue
+            
+            if  dataArr["account"] == nil    ||  dataArr["finished"] == nil  {
+                return
+                
+            }
+            
+          
+            
+            
+        })
+        
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     
