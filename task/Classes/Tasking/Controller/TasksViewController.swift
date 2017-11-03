@@ -134,15 +134,30 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @objc  func   withdraw(){
         
                QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
-//        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
+        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
         
-            let withdraw =  ZBWithDrawController()
-            navigationController?.pushViewController(withdraw, animated: true)
-//        }else{
-//
-//            let nav = ZBNavVC.init(rootViewController: ZBLoginController())
-//            present(nav, animated: true, completion: nil)
-//        }
+            
+             if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
+                
+                let withdraw =  ZBReadytToDrawController()
+                navigationController?.pushViewController(withdraw, animated: true)
+                
+            }else {  //未绑定
+                let withdraw =  ZBWithDrawController()
+                navigationController?.pushViewController(withdraw, animated: true)
+            }
+            
+            
+            
+            
+            
+            
+        }else{
+
+            
+            let nav = ZBNavVC.init(rootViewController: ZBLoginController())
+            present(nav, animated: true, completion: nil)
+        }
        
     
         

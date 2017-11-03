@@ -38,4 +38,16 @@ class SecureTool: NSObject {
         
     }
     
+    class  func finalStr(short_url :String ,full_url :String) -> String{
+        
+        let url = "/v1/user/\(short_url)"
+        let key = SecureTool.reKey(url: url)
+        let timestamp :String = SecureTool.reTimestamp()
+        let uuid = ASIdentifierManager.shared().advertisingIdentifier.uuidString as NSString
+        let    str = "\(full_url)?&key=\(key)&t=\(timestamp)&imei=\((uuid as String))"
+        
+        return str
+        
+    }
+    
 }

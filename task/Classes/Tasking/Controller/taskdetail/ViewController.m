@@ -65,11 +65,14 @@
         
         NSLog(@"%d",login);
         
+        NSString *base  = @"http://61.183.83.170:30001/";  //test
+//        NSString *base  = @"http://54.222.197.249:7272/";  //real
+        
         if (login) {
-             str = [NSString stringWithFormat:@"http://54.222.197.249:7272/v1/task/one?userid=%@&id=%@",[User GetUser].id ,self.taskid];
+             str = [NSString stringWithFormat:@"%@v1/task/one?userid=%@&id=%@",base,[User GetUser].id ,self.taskid];
         }else{
             
-              str = [NSString stringWithFormat:@"http://54.222.197.249:7272/v1/task/one?id=%@" ,self.taskid];
+              str = [NSString stringWithFormat:@"%@v1/task/one?id=%@" ,base,self.taskid];
         }
         
         

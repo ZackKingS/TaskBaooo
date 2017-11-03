@@ -26,6 +26,10 @@ class NetworkTool: NetworkToolProtocol {
         print(parameters)
         
         Alamofire.request( url,method : .post, parameters :parameters ).responseJSON { (response) in
+            
+            print(response)
+            
+            
             //判断是否成功
             guard response.result.isSuccess else {
                 return

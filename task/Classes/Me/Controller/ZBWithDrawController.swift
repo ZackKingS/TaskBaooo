@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-
+import SwiftyJSON
+import SVProgressHUD
 
 class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     
@@ -38,8 +39,13 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     
     @IBAction func next(_ sender: Any) {
         
-        if (cardT.text?.characters.count)! < 5 {
-            self.showHint(hint: "请输入银行卡")
+        if (cardT.text?.characters.count)! > 19   {
+            self.showHint(hint: "请输入正确的银行卡号")
+            return
+        }
+        
+        if (cardT.text?.characters.count)! < 16   {
+            self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
@@ -48,12 +54,52 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
             return
         }
         
-       
+
+        let para = ["id":User.GetUser().id,
+                    "card":cardT.text,
+                    "name": nameT.text
+            
+            
+            ] as [String : AnyObject]
         
-       let draw =  ZBReadytToDrawController()
-        draw.card = cardT.text
-        draw.name = nameT.text
-        navigationController?.pushViewController(draw, animated: true)
+        
+        let str = SecureTool.finalStr(short_url: "setbank", full_url: API_SETBANCK_URL)
+        
+    
+        
+        SVProgressHUD.show()
+        
+        NetworkTool.postMesa(url: str, parameters: para) { (value) in
+            
+            
+            SVProgressHUD.dismiss()
+            
+            let json = JSON(value ?? "123")
+            
+            let message = json.dictionaryValue["message"]?.stringValue
+            
+            if message == "success" {
+                
+                 UserDefaults.standard.set(true, forKey: SETBANK)
+                
+            
+                
+                let draw =  ZBReadytToDrawController()
+                draw.card = self.cardT.text
+                draw.name = self.nameT.text
+                self.navigationController?.pushViewController(draw, animated: true)
+                
+            }else{
+                
+                self.showHint(hint: message!)
+            }
+            
+            
+           
+        }
+        
+     
+     
     }
     
     

@@ -95,6 +95,8 @@ let isIPhone6P = screenHeight == 736 ? true : false
 
 let isNight = "isNight"
 
+let SETBANK = "SETBANK"
+
 let TabBarDidSelectedNotification = "TabBarDidSelectedNotification"
 
 let ZBLOGIN_KEY = "login" as String 
@@ -116,9 +118,11 @@ let JPushID = "JPushID"
 //----------------   用户接口---------------------------
 //let BaseURL = "http://taskbao.dev.cnfol.wh/"
 
-//let BaseURL = "http://61.183.83.170:30001/"
+//test
+let BaseURL = "http://61.183.83.170:30001/"
 
-let BaseURL = "http://54.222.197.249:7272/"
+//real
+//let BaseURL = "http://54.222.197.249:7272/"
 
 
 
@@ -138,11 +142,15 @@ let API_GETIMCOME_URL = BaseURL + "v1/user/income"
 let API_GETPROFILE_URL = BaseURL + "v1/user/profile"
 
 //退出
-let API_LOGOUT_URL = BaseURL +  "/v1/user/logout"
+let API_LOGOUT_URL = BaseURL +  "v1/user/logout"
 
 
 //互踢
-let API_KICK_URL = BaseURL +  "/v1/user/kick"
+let API_KICK_URL = BaseURL +  "v1/user/kick"
+
+//绑定银行卡
+let API_SETBANCK_URL = BaseURL +  "v1/user/setbank"
+
 
 
 //----------------   任务接口---------------------------
@@ -162,4 +170,4 @@ let  API_SOFTWARE_UPDATA_URL = BaseURL +  "v1/software"
 
 let  API_ERROR_MESSAGE_URL = BaseURL +  "v1/software/applog"
 
-//MARK: 正式接口
+
