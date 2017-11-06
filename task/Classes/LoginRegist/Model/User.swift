@@ -22,7 +22,8 @@ class User : NSObject, NSCoding {
     var  email : String?
     var  tel : String?
     var  usersig : String?
-    
+   var  bank_card : String?
+     var  card_name : String?
     
     // MARK:- 自定义构造函数  KVC实现字典转模型
     init(dict : [String : JSON]) {
@@ -38,7 +39,8 @@ class User : NSObject, NSCoding {
         account =  dict["account"]?.stringValue as String!
         finished =  dict["finished"]?.stringValue as String!
         
-        
+        bank_card =  dict["bank_card"]?.stringValue as String!
+        card_name =  dict["card_name"]?.stringValue as String!
     }
     
    
@@ -61,7 +63,9 @@ class User : NSObject, NSCoding {
         static let account = "account"
         static let tel = "tel"
        static let finished = "finished"
-       
+        
+        static let bank_card = "bank_card"
+        static let card_name = "card_name"
     }
     
 
@@ -72,7 +76,9 @@ class User : NSObject, NSCoding {
         tel = aDecoder.decodeObject(forKey: PropertyKey.tel) as? String
         account = aDecoder.decodeObject(forKey: PropertyKey.account) as? String
         finished = aDecoder.decodeObject(forKey: PropertyKey.finished) as? String
-
+        
+        bank_card = aDecoder.decodeObject(forKey: PropertyKey.bank_card) as? String
+         card_name = aDecoder.decodeObject(forKey: PropertyKey.card_name) as? String
     }
 
 
@@ -83,6 +89,9 @@ class User : NSObject, NSCoding {
         aCoder.encode(tel, forKey: PropertyKey.tel)
         aCoder.encode(finished, forKey: PropertyKey.finished)
         aCoder.encode(account, forKey: PropertyKey.account)
+        
+        aCoder.encode(bank_card, forKey: PropertyKey.bank_card)
+         aCoder.encode(card_name, forKey: PropertyKey.card_name)
 
     }
 

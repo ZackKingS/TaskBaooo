@@ -32,13 +32,21 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
         
         setupConfig()
         
-        bankNumL.text = card
-        nameL.text = name
         
-        
-//        checkbalance()
-        
-        
+        let bank_card  = User.GetUser().bank_card as! NSString
+     
+      
+        if bank_card.length > 3 {
+            
+            bankNumL.text = User.GetUser().bank_card
+            nameL.text = User.GetUser().card_name
+        }else{
+            
+            
+            bankNumL.text = card
+            nameL.text = name
+        }
+ 
        let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE")
         
         balanceT.text = " ¥ \(balance!)"
@@ -98,7 +106,6 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
         }
         
         let result =  ZBDrawController()
-        
         navigationController?.pushViewController(result, animated: true)
         
         

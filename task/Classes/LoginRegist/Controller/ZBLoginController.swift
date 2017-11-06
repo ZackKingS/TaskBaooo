@@ -82,9 +82,29 @@ class ZBLoginController: UIViewController {
             
             
             print(json)
-            
-    
-            
+            /*
+            {
+                "errorno" : 0,
+                "data" : {
+                    "id" : 100088,
+                    "usersig" : "",
+                    "is_logout" : 0,
+                    "card_name" : "看看",
+                    "avatar" : "",
+                    "alipay" : null,
+                    "bank_card" : "55555",
+                    "username" : "",
+                    "tel" : "18971225181",
+                    "jpush_id" : "1114a89792ad4fcb451",
+                    "nickname" : "看看",
+                    "email" : "",
+                    "account" : "2.50",
+                    "finished" : 2
+                },
+                "message" : "success"
+            }
+ 
+ */
             let errorStr   = json["errorno"].stringValue
             
             if errorStr ==  "20032"  ||  errorStr ==  "20031" || errorStr ==  "20032" || errorStr ==  "20030" {
@@ -104,6 +124,9 @@ class ZBLoginController: UIViewController {
             UserDefaults.standard.set(data, forKey: USER)
         
          
+            print(User.GetUser().bank_card)
+            
+            
             if !UserDefaults.standard.bool(forKey: ZBLOGIN_KEY) {
                 UserDefaults.standard.set(true, forKey: ZBLOGIN_KEY)
                 UserDefaults.standard.synchronize()
