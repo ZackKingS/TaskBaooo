@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SVProgressHUD
+import SwiftyJSON
 
 class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
 
@@ -99,16 +101,44 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
     @IBAction func next(_ sender: Any) {
         
         
-        if  Int(amountT.text!)!  < 100 {
+//        if  Int(amountT.text!)!  < 100 {
+//
+//            self.showHint(hint: "提现金额请高于100元")
+//            return
+//        }
+//
+//        let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE")
+//
+//
+//        if  Int(amountT.text!)!  >  Int(balance) {
+//
+//            self.showHint(hint: "提现金额请高于100元")
+//            return
+//        }
+        
+
+        
+        let para = ["id":User.GetUser().id,
+                    "card":User.GetUser().bank_card,
+                    "name": User.GetUser().card_name,
+                    "money":amountT.text
+            ] as [String : AnyObject]
+        
+        let str = SecureTool.finalStr(short_url: "encashment", full_url: API_ENCASHMENT_URL)
+        SVProgressHUD.show()
+        
+        NetworkTool.postMesa(url: str, parameters: para) { (value) in
+            SVProgressHUD.dismiss()
+            let json = JSON(value ?? "123")
+            if  json["message"].stringValue == "success" {
+                    let result =  ZBDrawController()
+                result.money =   Int(self.amountT.text!)
+                    self.navigationController?.pushViewController(result, animated: true)
+            }
             
-            self.showHint(hint: "提现金额请高于100元")
-            return
+            
+            
         }
-        
-        let result =  ZBDrawController()
-        navigationController?.pushViewController(result, animated: true)
-        
-        
     }
     
     

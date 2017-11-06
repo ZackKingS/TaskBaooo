@@ -151,6 +151,13 @@ let API_KICK_URL = BaseURL +  "v1/user/kick"
 //绑定银行卡
 let API_SETBANCK_URL = BaseURL +  "v1/user/setbank"
 
+//绑定银行卡
+let API_ENCASHMENT_URL = BaseURL +  "v1/user/encashment"
+
+
+
+
+
 
 
 //----------------   任务接口---------------------------

@@ -17,6 +17,7 @@ import SVProgressHUD
 import MBProgressHUD
 import UserNotificationsUI
 
+
 class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate{
 
     var tableView : UITableView?
@@ -137,14 +138,71 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
         
             let bank_card  = User.GetUser().bank_card as! NSString
-//            let b_count = bank_card?.characters.count
+
             
-            print(bank_card)
+          
+            
             if bank_card.length > 3 {
 
-                print("bank_ex")
-                let withdraw =  ZBReadytToDrawController()
-                navigationController?.pushViewController(withdraw, animated: true)
+                
+
+                var str = SecureTool.finalStr(short_url: "encashment", full_url: API_ENCASHMENT_URL)
+                SVProgressHUD.show()
+                
+                str = "\(str)&id=\(User.GetUser().id!)"
+                
+                Alamofire.request(str, parameters: nil ).responseJSON { (response) in
+                    //判断是否成功
+                    guard response.result.isSuccess else {
+                        return
+                    }
+                    SVProgressHUD.dismiss()
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        
+                                            /*
+                                             {
+                                                 data =     {
+                                                     id = 3;
+                                                     "is_success" = "-1"; 1：失败 2：成功
+                                                     money = 2;
+                                                     remarks = "";
+                                                     status = 0;
+                                                     };
+                                                 errorno = 0;  状态 0：请等待 1：已受理 2：处理完成 3：可开始新一次提现
+                                                 message = success;
+                                             }
+                                             */
+                        print(json)
+                        
+                        if  json["message"].stringValue == "success" {
+                        
+                            let data = json["data"].dictionaryValue
+                            let status  :Int = (data["status"]?.intValue)!
+                        
+                            switch status {
+                            case 0 ,1,2 :  //请等待
+                                let withdraw =  ZBDrawController()
+                                withdraw.status = status
+                                withdraw.is_success =  (data["is_success"]?.intValue)!
+                                withdraw.money  = (data["money"]?.intValue)!
+                                withdraw.remarks  = (data["remarks"]?.stringValue)!
+                                self.navigationController?.pushViewController(withdraw, animated: true)
+                                
+                            
+                            case 3  :  //可开始新一次提现
+                                let withdraw =  ZBReadytToDrawController()
+                                self.navigationController?.pushViewController(withdraw, animated: true)
+                                
+                                
+                            default :
+                                print( "默认 case")
+                            }
+                       }
+                    }
+                }
+            
+
 
             }else{
 

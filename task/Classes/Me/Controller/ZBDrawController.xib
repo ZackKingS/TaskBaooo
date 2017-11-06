@@ -12,6 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBDrawController" customModule="task" customModuleProvider="target">
             <connections>
                 <outlet property="backBtn" destination="Prs-eA-KDI" id="ZjL-wb-ygW"/>
+                <outlet property="detailL" destination="c1f-Bw-e8E" id="Dfz-Of-abr"/>
+                <outlet property="moneyCountL" destination="o3b-un-19w" id="6W6-WJ-tkG"/>
+                <outlet property="moneyInfoL" destination="TXU-6d-mph" id="C95-Bl-bcS"/>
+                <outlet property="statusInfoL" destination="fP6-rZ-i3I" id="yPC-sG-4H2"/>
                 <outlet property="view" destination="iN0-l3-epB" id="YxR-Ig-9Q2"/>
             </connections>
         </placeholder>
