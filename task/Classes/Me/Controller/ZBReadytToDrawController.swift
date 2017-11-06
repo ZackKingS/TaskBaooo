@@ -133,6 +133,7 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
             if  json["message"].stringValue == "success" {
                     let result =  ZBDrawController()
                 result.money =   Int(self.amountT.text!)
+                result.is_success =  -1
                     self.navigationController?.pushViewController(result, animated: true)
             }
             

@@ -165,9 +165,9 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                                                      "is_success" = "-1"; 1：失败 2：成功
                                                      money = 2;
                                                      remarks = "";
-                                                     status = 0;
+                                                     status = 0; 状态 0：请等待 1：已受理 2：处理完成 3：可开始新一次提现
                                                      };
-                                                 errorno = 0;  状态 0：请等待 1：已受理 2：处理完成 3：可开始新一次提现
+                                                 errorno = 0;
                                                  message = success;
                                              }
                                              */
@@ -176,24 +176,14 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                         if  json["message"].stringValue == "success" {
                         
                             let data = json["data"].dictionaryValue
-                            
-                            print(data)
-                            
+
                             if data == [:] {
-                                
                                 let withdraw =  ZBReadytToDrawController()
                                 self.navigationController?.pushViewController(withdraw, animated: true)
                                 return
-                                
-                                
                             }
                             
                             let status  :Int = (data["status"]?.intValue)!
-                            
-                            
-                            
-                            
-                        
                             switch status {
                             case 0 ,1,2 :  //请等待
                                 let withdraw =  ZBDrawController()
