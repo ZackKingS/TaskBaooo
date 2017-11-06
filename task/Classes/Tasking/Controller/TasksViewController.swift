@@ -135,16 +135,14 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @objc  func   withdraw(){
         
                QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+        
+        
+        
         if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
         
             let bank_card  = User.GetUser().bank_card as! NSString
 
-            
-          
-            
             if bank_card.length > 3 {
-
-                
 
                 var str = SecureTool.finalStr(short_url: "encashment", full_url: API_ENCASHMENT_URL)
                 SVProgressHUD.show()
@@ -178,7 +176,23 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                         if  json["message"].stringValue == "success" {
                         
                             let data = json["data"].dictionaryValue
+                            
+                            print(data)
+                            
+                            if data == [:] {
+                                
+                                let withdraw =  ZBReadytToDrawController()
+                                self.navigationController?.pushViewController(withdraw, animated: true)
+                                return
+                                
+                                
+                            }
+                            
                             let status  :Int = (data["status"]?.intValue)!
+                            
+                            
+                            
+                            
                         
                             switch status {
                             case 0 ,1,2 :  //请等待
@@ -217,11 +231,7 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 }
             }
             
-            
-            
-           
-            
-            
+      
             
         }else{
 
