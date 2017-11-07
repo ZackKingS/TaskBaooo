@@ -37,23 +37,55 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
         
         let bank_card  = User.GetUser().bank_card as! NSString
      
-      
-        if bank_card.length > 3 {
+        
+        
+        
+        if UserDefaults.standard.bool(forKey: SETBANK) {
             
-            bankNumL.text = User.GetUser().bank_card
-            nameL.text = User.GetUser().card_name
+            
+            let str =  UserDefaults.standard.object(forKey: "USER_BANK_CARD") as! String
+            
+            bankNumL.text = addSpace(num:str ) as? String
+            
+            nameL.text =  UserDefaults.standard.object(forKey: "USER_BANK_NAME") as! String
         }else{
             
-            
-            bankNumL.text = card
-            nameL.text = name
+            if bank_card.length > 3 {
+                
+                bankNumL.text =    addSpace(num: User.GetUser().bank_card) as? String
+                
+                nameL.text = User.GetUser().card_name
+            }else{
+                
+                
+                bankNumL.text = card
+                nameL.text = name
+            }
         }
+        
+        
  
        let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE")
         
         balanceT.text = " ¥ \(balance!)"
         
        
+        
+        
+
+        
+    }
+    
+    
+    
+    func addSpace(num:String?)->NSString?{
+        
+        
+        var str = num! as NSString
+        
+        str = str.getNewBankNumWitOldBankNum(str as String! )! as NSString
+        
+        return str
         
     }
     

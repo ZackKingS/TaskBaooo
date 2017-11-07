@@ -209,7 +209,8 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
                 
            
                let log = ZBLoginController()
-                present(log, animated: true, completion: nil)
+                let nav = ZBNavVC.init(rootViewController: log)
+                present(nav, animated: true, completion: nil)
                 
            }
            

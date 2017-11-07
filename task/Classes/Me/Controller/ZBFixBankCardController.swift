@@ -110,5 +110,36 @@ class ZBFixBankCardController: UIViewController {
     ] 
     navigationItem.title = "修改绑定银行卡";
         
+        
+        
+        let bank_card  = User.GetUser().bank_card as! NSString
+        
+       
+        
+        if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
+            
+      
+           nameL.text = UserDefaults.standard.object(forKey: "USER_BANK_NAME") as! String
+            card.text = UserDefaults.standard.object(forKey: "USER_BANK_CARD") as! String
+            
+            
+        }else{
+            
+            if bank_card.length > 3 {
+                
+                card.text  = User.GetUser().bank_card
+                nameL.text  = User.GetUser().card_name
+            }
+        }
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }

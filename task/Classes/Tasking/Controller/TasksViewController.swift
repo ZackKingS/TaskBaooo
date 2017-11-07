@@ -206,8 +206,6 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                     }
                 }
             
-
-
             }else{
 
                 if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
