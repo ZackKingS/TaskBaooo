@@ -213,6 +213,8 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
 
                     let withdraw =  ZBReadytToDrawController()
+                    withdraw.name = UserDefaults.standard.object(forKey: "USER_BANK_NAME") as! String
+                    withdraw.card = UserDefaults.standard.object(forKey: "USER_BANK_CARD") as! String
                     navigationController?.pushViewController(withdraw, animated: true)
 
                 }else {  //未绑定

@@ -54,6 +54,9 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
             return
         }
         
+        
+        UserDefaults.standard.set(cardT.text, forKey: "USER_BANK_CARD")
+          UserDefaults.standard.set(nameT.text, forKey: "USER_BANK_NAME")
 
         let para = ["id":User.GetUser().id,
                     "card":cardT.text,
