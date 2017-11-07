@@ -31,6 +31,8 @@
 		3A111CA71F7A0A7600675991 /* ZBForgotPwdController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A111CA61F7A0A7600675991 /* ZBForgotPwdController.xib */; };
 		3A111CA91F7A2C0400675991 /* ZBSetPwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A111CA81F7A2C0400675991 /* ZBSetPwdController.swift */; };
 		3A111CAB1F7A2C0F00675991 /* ZBSetPwdController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A111CAA1F7A2C0F00675991 /* ZBSetPwdController.xib */; };
+		3A18AF091FB1583F00D16A8F /* ZBFixBankCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A18AF081FB1583F00D16A8F /* ZBFixBankCardController.swift */; };
+		3A18AF0B1FB1588100D16A8F /* ZBFixBankCardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A18AF0A1FB1588100D16A8F /* ZBFixBankCardController.xib */; };
 		3A3BB4CF1F8C5CB600B87EB4 /* TaskDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BB4CD1F8C5CB600B87EB4 /* TaskDetailCell.m */; };
 		3A3BB4D01F8C5CB600B87EB4 /* TaskDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3BB4CE1F8C5CB600B87EB4 /* TaskDetailCell.xib */; };
 		3A3BB4D31F8C606F00B87EB4 /* SecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BB4D21F8C606F00B87EB4 /* SecondTableViewController.m */; };
@@ -122,6 +124,8 @@
 		3A111CA61F7A0A7600675991 /* ZBForgotPwdController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBForgotPwdController.xib; sourceTree = "<group>"; };
 		3A111CA81F7A2C0400675991 /* ZBSetPwdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBSetPwdController.swift; sourceTree = "<group>"; };
 		3A111CAA1F7A2C0F00675991 /* ZBSetPwdController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBSetPwdController.xib; sourceTree = "<group>"; };
+		3A18AF081FB1583F00D16A8F /* ZBFixBankCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBFixBankCardController.swift; sourceTree = "<group>"; };
+		3A18AF0A1FB1588100D16A8F /* ZBFixBankCardController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBFixBankCardController.xib; sourceTree = "<group>"; };
 		3A27D7EB1F7DFB67003AD58A /* AlbumToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumToolbarView.swift; sourceTree = "<group>"; };
 		3A27D7EC1F7DFB67003AD58A /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		3A27D7ED1F7DFB67003AD58A /* PhotoAlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumsTableViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 				3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */,
 				3A5386641FAB061800F37F84 /* ZBDrawController.swift */,
 				3A5386661FAB064D00F37F84 /* ZBDrawController.xib */,
+				3A18AF081FB1583F00D16A8F /* ZBFixBankCardController.swift */,
+				3A18AF0A1FB1588100D16A8F /* ZBFixBankCardController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -692,6 +698,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3E6AB41F7B80140025E63B /* ZBTaskSuccessController.xib in Resources */,
+				3A18AF0B1FB1588100D16A8F /* ZBFixBankCardController.xib in Resources */,
 				3A5386671FAB064D00F37F84 /* ZBDrawController.xib in Resources */,
 				3A3E6AAC1F7B73280025E63B /* ZBStartTaskController.xib in Resources */,
 				3A111CAB1F7A2C0F00675991 /* ZBSetPwdController.xib in Resources */,
@@ -833,6 +840,7 @@
 				3A111C9D1F79F4B400675991 /* UIImage+Extension.swift in Sources */,
 				3A4530FE1F90633B0069B97F /* ZBButton.swift in Sources */,
 				3A097CB91F6FB9B800222AEA /* LLCycleScrollView.swift in Sources */,
+				3A18AF091FB1583F00D16A8F /* ZBFixBankCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -172,6 +172,27 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
         
         if indexPath.row == 0 {
 
+            if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY) {
+                
+               
+                let bank_card  = User.GetUser().bank_card as! NSString
+                 if bank_card.length > 3 {
+              
+                   let fix = ZBFixBankCardController()
+                    navigationController?.pushViewController(fix, animated: true)
+                    
+                 }else{
+                    let fix = ZBWithDrawController()
+                    navigationController?.pushViewController(fix, animated: true)
+                    
+                }
+                   
+               
+            }else{
+                
+           
+                
+           }
            
 
         }else if indexPath.row == 1{
