@@ -49,7 +49,7 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
     @IBAction func fix(_ sender: Any) {
         
         
-        if (card.text?.characters.count)! > 19  + 3 {
+        if (card.text?.characters.count)! > 19  + 4 {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }

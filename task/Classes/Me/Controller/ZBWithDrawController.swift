@@ -59,7 +59,7 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     
     @IBAction func next(_ sender: Any) {
         
-        if (cardT.text?.characters.count)! > 19 + 3  {
+        if (cardT.text?.characters.count)! > 19 + 4  {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
