@@ -39,23 +39,15 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        
         if textField == cardT {
-            
-            print(string)
-            
+
             if string == "" {
 
             }else{
                 if  (textField.text?.characters.count)! % 5 == 0 {
                     textField.text = "\(textField.text!) "
                 }
-                
             }
-        
-            
-            
-           
         }
         return true
     }

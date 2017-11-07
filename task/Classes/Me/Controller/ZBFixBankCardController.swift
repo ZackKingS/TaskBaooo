@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 import SVProgressHUD
-class ZBFixBankCardController: UIViewController {
+class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
     
     @IBOutlet weak var card: UITextField!
     @IBOutlet weak var nameL: UITextField!
@@ -20,7 +20,7 @@ class ZBFixBankCardController: UIViewController {
         super.viewDidLoad()
         
             setupConfig()
-            
+             card.delegate = self
         }
     
     
@@ -30,15 +30,31 @@ class ZBFixBankCardController: UIViewController {
     }
     
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+        if textField == card {
+
+            if string == "" {
+                
+            }else{
+                if  (textField.text?.characters.count)! % 5 == 0 {
+                    textField.text = "\(textField.text!) "
+                }
+            }
+        }
+        return true
+    }
+    
+    
     @IBAction func fix(_ sender: Any) {
         
         
-        if (card.text?.characters.count)! > 19   {
+        if (card.text?.characters.count)! > 19  + 3 {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (card.text?.characters.count)! < 16   {
+        if (card.text?.characters.count)! < 16 + 3   {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
@@ -50,11 +66,16 @@ class ZBFixBankCardController: UIViewController {
         
         
         let para = ["id":User.GetUser().id,
-                    "card":card.text,
+                    "card":card.text?.removeAllSapce,
                     "name": nameL.text
             
             
             ] as [String : AnyObject]
+        
+        
+        UserDefaults.standard.set(card.text?.removeAllSapce, forKey: "USER_BANK_CARD")
+        UserDefaults.standard.set(nameL.text, forKey: "USER_BANK_NAME")
+        
         
         
         let str = SecureTool.finalStr(short_url: "setbank", full_url: API_SETBANCK_URL)
@@ -110,24 +131,22 @@ class ZBFixBankCardController: UIViewController {
     ] 
     navigationItem.title = "修改绑定银行卡";
         
-        
-        
-        let bank_card  = User.GetUser().bank_card as! NSString
-        
-       
-        
+
+        let bank_card  = User.GetUser().bank_card! as NSString
+ 
         if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
             
-      
-           nameL.text = UserDefaults.standard.object(forKey: "USER_BANK_NAME") as! String
-            card.text = UserDefaults.standard.object(forKey: "USER_BANK_CARD") as! String
+            let str = UserDefaults.standard.object(forKey: "USER_BANK_CARD") as! NSString
+            nameL.text = UserDefaults.standard.object(forKey: "USER_BANK_NAME") as? String
+            card.text = str.getNewBankNumWitOldBankNum(str as String!)
             
             
         }else{
             
             if bank_card.length > 3 {
                 
-                card.text  = User.GetUser().bank_card
+                let strr =  User.GetUser().bank_card! as NSString
+                card.text  = strr.getNewBankNumWitOldBankNum(strr as String!)
                 nameL.text  = User.GetUser().card_name
             }
         }
