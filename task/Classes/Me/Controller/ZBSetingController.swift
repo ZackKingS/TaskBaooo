@@ -191,6 +191,8 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
             }else{
                 
            
+               let log = ZBLoginController()
+                present(log, animated: true, completion: nil)
                 
            }
            
