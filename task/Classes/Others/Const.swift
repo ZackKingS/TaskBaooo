@@ -108,7 +108,6 @@ let ZBLogin = UserDefaults.standard.object(forKey: ZBLOGIN_KEY)! as! Bool
 let USER = "user"
 
 
-//let JPushAppKey = "7d425198700d9902fe86b81f"
 
 let JPushAppKey = "7f0278e3db3e0f2559492e9d"
 
@@ -123,7 +122,6 @@ let BaseURL = "http://61.183.83.170:30001/"
 
 //real
 //let BaseURL = "http://54.222.197.249:7272/"
-
 
 
 //短信

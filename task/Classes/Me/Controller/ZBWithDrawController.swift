@@ -65,8 +65,6 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
         
         let str = SecureTool.finalStr(short_url: "setbank", full_url: API_SETBANCK_URL)
         
-    
-        
         SVProgressHUD.show()
         
         NetworkTool.postMesa(url: str, parameters: para) { (value) in
@@ -81,8 +79,6 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
             if message == "success" {
                 
                  UserDefaults.standard.set(true, forKey: SETBANK)
-                
-            
                 
                 let draw =  ZBReadytToDrawController()
                 draw.card = self.cardT.text

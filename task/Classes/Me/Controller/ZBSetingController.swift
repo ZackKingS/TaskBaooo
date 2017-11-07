@@ -18,27 +18,21 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
     
     @IBOutlet weak var logoutBtn: UIButton!
     
+    
+    @IBOutlet weak var versionNum: UIButton!
+    
+    
+    @IBOutlet weak var isCardBtn: UIButton!
+    
+    
+    
+    var appStoreUrl :String?
+    var force_update :String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupConfig()
-        
-        
-        
-        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY) {
-            
-            logoutBtn.isHidden = false
-        }else{
-            
-              logoutBtn.isHidden = true
-        }
-   
-        
-    
-        let s = " \(ZBCleanTool.fileSizeOfCache()) M"
-        sizeBtn.setTitle(s, for: .normal)
-        
-    
      
     }
     
@@ -57,14 +51,12 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
         }else if indexPath.row == 1{
             return 50
         }else if  indexPath.row == 2{
-            
             return 50
-           
         }else if  indexPath.row == 3{
-            
-            return screenHeight - 50 * 2 - 20
+           return 50
+        }else if  indexPath.row == 4{
+            return screenHeight - 50 * 4 - 20
         }
-        
         return 60
     }
     
@@ -85,8 +77,6 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
   
         alert.addAction(actionCancel)
         alert.addAction(actionCamera)
-        
-        
         self.present(alert, animated: true, completion: nil)
         
     }
@@ -124,6 +114,35 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
     func setupConfig(){
         
         
+        
+        let infoDictionary = Bundle.main.infoDictionary
+        let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
+        versionNum.setTitle("当前版本V\(currentAppVersion)", for: .normal)
+        
+        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY) {
+            
+            logoutBtn.isHidden = false
+            let bank_card  = User.GetUser().bank_card as! NSString
+            if bank_card.length > 3 {
+                isCardBtn.setTitle("已绑定", for: .normal)
+                
+            }else{
+                 isCardBtn.setTitle("未绑定", for: .normal)
+            }
+
+        }else{
+            
+            
+            isCardBtn.setTitle("未绑定", for: .normal)
+            logoutBtn.isHidden = true
+        }
+        
+        
+        
+        let s = " \(ZBCleanTool.fileSizeOfCache()) M"
+        sizeBtn.setTitle(s, for: .normal)
+        
+        
         tableView.backgroundColor = UIColor.white
         
         navigationController?.navigationBar.titleTextAttributes = [
@@ -153,25 +172,15 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
         
         if indexPath.row == 0 {
 
-            alcer()
-            
+           
 
         }else if indexPath.row == 1{
-          
-
-             checkupdate()
+             alcer()
         }else if indexPath.row == 2{
-
-            
-              navigationController?.pushViewController(ZBAboutMe(), animated: true)
+              checkupdate()
+        }else if indexPath.row == 3{
+            navigationController?.pushViewController(ZBAboutMe(), animated: true)
         }
-        
-        
-        
-        
-        
-        
-        
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
@@ -180,22 +189,13 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
         
         
         let alert = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        // change the style sheet text color
-//        alert.view.tintColor = UIColor.blue
-        
         let actionCancel = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
         let actionCamera = UIAlertAction.init(title: "确定", style: .default) { (UIAlertAction) -> Void in
             self.cleannn()
         }
         
-       
-      
-        
         alert.addAction(actionCancel)
         alert.addAction(actionCamera)
-    
-        
         self.present(alert, animated: true, completion: nil)
     
     }
@@ -204,13 +204,8 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
     private func cleannn(){
         
         ZBCleanTool.clearCache()
-        
         SVProgressHUD.show()
-        
-        
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            
             SVProgressHUD.showSuccess(withStatus: "")
             SVProgressHUD.setAnimationDuration(1)
             self.sizeBtn.setTitle(" 0 M", for: .normal)
@@ -231,50 +226,69 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
                 let infoDictionary = Bundle.main.infoDictionary
                 let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
                 let json = JSON(value)
+                
                 let version_name = json["data"]["version_name"].stringValue
-                
-                
-                print(currentAppVersion)
-                
-                print(version_name)
+                self.appStoreUrl = json["data"]["package_url"].stringValue
+                self.force_update = json["data"]["force_update"].stringValue
                 
                 if currentAppVersion != version_name {
                     
-                    print( "去更新")
-                    
                     let des = json["data"]["update_state"].stringValue
-                    
                     self.compareVersion(currentAppVersion, storeVersion: version_name, note: des)
                     
                 }else{
-                    
-                    self.showHint(hint: "已经是最新版本")
+                    self.showHint(hint: "您已经是最新版本")
                 }
             }
         }
     }
-    
-    
     fileprivate func compareVersion(_ localVersion: String, storeVersion: String,note:String) {
         let message = "本次更新内容：\n\(note)"
+        
+        
         if localVersion.compare(storeVersion) == ComparisonResult.orderedAscending {
-            let alertView = UIAlertView(title: "发现新版本",message: message,delegate: self as? UIAlertViewDelegate,cancelButtonTitle: nil,otherButtonTitles: "马上更新","下次再说")
-            alertView.delegate = self
-            alertView.tag = 10086
-            alertView.show()
+            
+            if   force_update == "0"   {
+                
+                let alertView = UIAlertView(title: "发现新版本",message: message,delegate: self as? UIAlertViewDelegate,cancelButtonTitle: nil,otherButtonTitles: "马上更新","下次再说")
+                alertView.delegate = self
+                alertView.tag = 10086
+                alertView.show()
+                
+            } else  if force_update == "1"{
+                let alertView = UIAlertView(title: "发现新版本",message: message,delegate: self as? UIAlertViewDelegate,cancelButtonTitle: nil,otherButtonTitles: "马上更新","立即更新")
+                alertView.delegate = self
+                alertView.tag = 10086
+                alertView.show()
+                
+            }
+            
         }
     }
     
     func alertView(_ alertView:UIAlertView, clickedButtonAt buttonIndex: Int){
         if(alertView.tag == 10086) {
             if(buttonIndex == 0){
-                UIApplication.shared.openURL(URL(string:"https://itunes.apple.com/cn/app/wei-xin/id414478124?mt=8")!)
+                
+                if appStoreUrl != nil {
+                    UIApplication.shared.openURL(URL(string:appStoreUrl!)!)
+                }
+                
+                
             }else{
-                //下次再说
+                
+                if   force_update == "0"   {
+                    
+                } else  if force_update == "1"{
+                    if appStoreUrl != nil {
+                        UIApplication.shared.openURL(URL(string:appStoreUrl!)!)
+                    }
+                    
+                }
+                
             }
         }
     }
-    
         
         
 }
