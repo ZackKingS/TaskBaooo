@@ -38,8 +38,6 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
         let bank_card  = User.GetUser().bank_card as! NSString
      
         
-        
-        
         if UserDefaults.standard.bool(forKey: SETBANK) {
             
             
