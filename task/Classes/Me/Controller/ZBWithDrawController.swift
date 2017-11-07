@@ -38,23 +38,41 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
         if textField == cardT {
-            if  (textField.text?.characters.count)! % 5 == 0 {
-                 textField.text = "\(textField.text!) "
-            }
+            
+            print(string)
+            
+            if string == "" {
 
+            }else{
+                if  (textField.text?.characters.count)! % 5 == 0 {
+                    textField.text = "\(textField.text!) "
+                }
+                
+            }
+        
+            
+            
+           
         }
         return true
     }
     
+    
+    
+  
+    
+    
     @IBAction func next(_ sender: Any) {
         
-        if (cardT.text?.characters.count)! > 19   {
+        if (cardT.text?.characters.count)! > 19 + 3  {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (cardT.text?.characters.count)! < 16   {
+        if (cardT.text?.characters.count)! < 16 + 3   {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
@@ -65,15 +83,17 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
         }
         
         
-        UserDefaults.standard.set(cardT.text, forKey: "USER_BANK_CARD")
-          UserDefaults.standard.set(nameT.text, forKey: "USER_BANK_NAME")
+       
 
+        
         let para = ["id":User.GetUser().id,
-                    "card":cardT.text,
+                    "card":  cardT.text?.removeAllSapce,
                     "name": nameT.text
-            
-            
             ] as [String : AnyObject]
+        
+        UserDefaults.standard.set(cardT.text?.removeAllSapce, forKey: "USER_BANK_CARD")
+        UserDefaults.standard.set(nameT.text, forKey: "USER_BANK_NAME")
+        
         
         
         let str = SecureTool.finalStr(short_url: "setbank", full_url: API_SETBANCK_URL)
