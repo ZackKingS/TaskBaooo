@@ -65,6 +65,8 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
         }
         
         
+        
+        
         let para = ["id":User.GetUser().id,
                     "card":card.text?.removeAllSapce,
                     "name": nameL.text
