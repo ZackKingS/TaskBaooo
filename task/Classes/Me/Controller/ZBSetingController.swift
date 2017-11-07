@@ -127,7 +127,14 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
                 isCardBtn.setTitle("已绑定", for: .normal)
                 
             }else{
-                 isCardBtn.setTitle("未绑定", for: .normal)
+    
+                if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
+                    
+                    isCardBtn.setTitle("已绑定", for: .normal)
+                    
+                }else {  //未绑定
+                      isCardBtn.setTitle("未绑定", for: .normal)
+                }
             }
 
         }else{
@@ -182,9 +189,19 @@ class ZBSetingController: UITableViewController ,UIAlertViewDelegate{
                     navigationController?.pushViewController(fix, animated: true)
                     
                  }else{
-                    let fix = ZBWithDrawController()
-                    navigationController?.pushViewController(fix, animated: true)
                     
+                    
+                    
+                    if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
+                        
+                        let fix = ZBFixBankCardController()
+                        navigationController?.pushViewController(fix, animated: true)
+                        
+                    }else {  //未绑定
+                        let fix = ZBWithDrawController()
+                        navigationController?.pushViewController(fix, animated: true)
+                    }
+  
                 }
                    
                
