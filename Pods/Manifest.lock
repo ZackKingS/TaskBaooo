@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - IQKeyboardManager (5.0.3)
   - JAnalytics (1.1.3):
     - JCore (~> 1.1.5)
   - JCore (1.1.5)
@@ -22,6 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5.0)
+  - IQKeyboardManager
   - JAnalytics
   - JPush
   - Kingfisher (~> 3.10.4)
@@ -38,6 +40,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  IQKeyboardManager: dc5b18b47e5170e4d150bb86dbee8c8a2fc48997
   JAnalytics: ea4a5831a9bc423467e3dd55eae2504e6f9f53c2
   JCore: 9bd9c770c877c583d98b90a68792b8361974c231
   JPush: c41be50eb1a574a66aeb68d237f00a4ec6ec3a82
@@ -53,6 +56,6 @@ SPEC CHECKSUMS:
   SwiftTheme: 85f84747a48749b5b3df7c3e96fc0b1d45677d30
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6d44db6ddeb778d16253f99b259b376adc863494
+PODFILE CHECKSUM: 1eea0475825616ac2355dad7fae0736a007f8e75
 
 COCOAPODS: 1.2.0

@@ -25,6 +25,7 @@ target 'task' do
 
     pod 'MBProgressHUD'
 
+pod 'IQKeyboardManager'
  	
     pod 'ReachabilitySwift'  
 
