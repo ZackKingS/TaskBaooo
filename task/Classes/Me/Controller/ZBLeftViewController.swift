@@ -207,7 +207,7 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
             let account = "\(dic["account"]!.stringValue)元"
             
             
-            UserDefaults.standard.set(account, forKey: "USER_BALANCE")
+            UserDefaults.standard.set(dic["account"]!.stringValue, forKey: "USER_BALANCE")
             
              self.rightDataArray = [ finished, account]
             

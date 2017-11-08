@@ -72,8 +72,8 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
             ] as [String : AnyObject]
         
         
-        UserDefaults.standard.set(card.text?.removeAllSapce, forKey: "USER_BANK_CARD")
-        UserDefaults.standard.set(nameL.text, forKey: "USER_BANK_NAME")
+        UserDefaults.standard.set(card.text?.removeAllSapce, forKey: USER_BANK_CARD)
+        UserDefaults.standard.set(nameL.text, forKey: USER_BANK_NAME)
         
         
         
@@ -135,8 +135,8 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
  
         if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
             
-            let str = UserDefaults.standard.object(forKey: "USER_BANK_CARD") as! NSString
-            nameL.text = UserDefaults.standard.object(forKey: "USER_BANK_NAME") as? String
+            let str = UserDefaults.standard.object(forKey: USER_BANK_CARD) as! NSString
+            nameL.text = UserDefaults.standard.object(forKey: USER_BANK_NAME) as? String
             card.text = str.getNewBankNumWitOldBankNum(str as String!)
             
             

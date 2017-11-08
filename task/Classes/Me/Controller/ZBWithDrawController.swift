@@ -85,8 +85,8 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
                     "name": nameT.text
             ] as [String : AnyObject]
         
-        UserDefaults.standard.set(cardT.text?.removeAllSapce, forKey: "USER_BANK_CARD")
-        UserDefaults.standard.set(nameT.text, forKey: "USER_BANK_NAME")
+        UserDefaults.standard.set(cardT.text?.removeAllSapce, forKey: USER_BANK_CARD)
+        UserDefaults.standard.set(nameT.text, forKey: USER_BANK_NAME)
         
         
         

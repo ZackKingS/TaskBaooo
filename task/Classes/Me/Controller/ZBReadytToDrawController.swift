@@ -41,11 +41,11 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
         if UserDefaults.standard.bool(forKey: SETBANK) {
             
             
-            let str =  UserDefaults.standard.object(forKey: "USER_BANK_CARD") as! String
+            let str =  UserDefaults.standard.object(forKey: USER_BANK_CARD) as! String
             
             bankNumL.text = addSpace(num:str ) as? String
             
-            nameL.text =  UserDefaults.standard.object(forKey: "USER_BANK_NAME") as! String
+            nameL.text =  UserDefaults.standard.object(forKey: USER_BANK_NAME) as! String
         }else{
             
             if bank_card.length > 3 {
@@ -130,24 +130,24 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
     
     @IBAction func next(_ sender: Any) {
         
+        let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE") as! String
+      
+        if amountT.text?.count == 0 {
+             self.showHint(hint: "请输入金额")
+            return
+        }
         
-//        if  Int(amountT.text!)!  < 100 {
-//
-//            self.showHint(hint: "提现金额请高于100元")
-//            return
-//        }
-//
-//        let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE")
-//
-//
-//        if  Int(amountT.text!)!  >  Int(balance) {
-//
-//            self.showHint(hint: "提现金额请高于100元")
-//            return
-//        }
         
+        if  Double(amountT.text!)!  >  Double(balance)! {
+            self.showHint(hint: "余额不足")
+            return
+        }
+        
+        if  Int(amountT.text!)!  < 100 {
+            self.showHint(hint: "提现金额请高于100元")
+            return
+        }
 
-        
         let para = ["id":User.GetUser().id,
                     "card":User.GetUser().bank_card,
                     "name": User.GetUser().card_name,
