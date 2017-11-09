@@ -71,12 +71,12 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
         
         print(cardT.text?.count)
         
-        if (cardT.text?.count)! > 24  {
+        if (cardT.text?.count)! >= 25    {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (cardT.text?.count)! < 20   {
+        if (cardT.text?.count)! <= 18  {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }

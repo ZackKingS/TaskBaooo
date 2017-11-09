@@ -52,12 +52,14 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
     @IBAction func fix(_ sender: Any) {
         
         
-        if (card.text?.count)! > 24 {
+        print(card.text?.count)
+        
+        if (card.text?.count)! >= 25 {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (card.text?.count)! < 20   {
+        if (card.text?.count)! <= 18   {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
