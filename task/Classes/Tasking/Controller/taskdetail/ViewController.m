@@ -65,7 +65,15 @@
         
         NSLog(@"%d",login);
         
+        
+#if  DEBUG
         NSString *base  = @"http://61.183.83.170:30001/";  //test
+#else
+         NSString *base  = @"http://54.222.197.249:7272/";  //real
+#endif
+        
+        
+//        NSString *base  = @"http://61.183.83.170:30001/";  //test
 //        NSString *base  = @"http://54.222.197.249:7272/";  //real
         
         if (login) {
