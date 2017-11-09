@@ -102,6 +102,8 @@ let USER_BANK_CARD = "USER_BANK_CARD"
 
 let USER_BANK_NAME  = "USER_BANK_NAME"
 
+let BANK_BRANCH = "BANK_BRANCH"
+
 let TabBarDidSelectedNotification = "TabBarDidSelectedNotification"
 
 let ZBLOGIN_KEY = "login" as String 

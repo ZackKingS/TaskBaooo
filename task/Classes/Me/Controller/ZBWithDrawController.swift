@@ -16,11 +16,13 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     
     
     @IBOutlet weak var cardT: UITextField!
-    
-    
     @IBOutlet weak var nameT: UITextField!
-    
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var bankBranchTF: UITextField!
+    
+    
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     
         cardT.resignFirstResponder()
@@ -44,7 +46,7 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
             if string == "" {
 
             }else{
-                if  (textField.text?.characters.count)! % 5 == 0 {
+                if  (textField.text?.count)! % 5 == 0 {
                     textField.text = "\(textField.text!) "
                 }
             }
@@ -59,35 +61,40 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     
     @IBAction func next(_ sender: Any) {
         
-        print(cardT.text?.characters.count)
+        print(cardT.text?.count)
         
-        if (cardT.text?.characters.count)! > 24  {
+        if (cardT.text?.count)! > 24  {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (cardT.text?.characters.count)! < 20   {
+        if (cardT.text?.count)! < 20   {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (nameT.text?.characters.count)! < 2 {
+        if (nameT.text?.count)! < 2 {
             self.showHint(hint: "请输入收款人")
             return
         }
         
         
-       
+        if (bankBranchTF.text?.count)! < 4 {
+            self.showHint(hint: "请输入正确的开户行")
+            return
+        }
 
         
         let para = ["id":User.GetUser().id,
                     "card":  cardT.text?.removeAllSapce,
-                    "name": nameT.text
+                    "name": nameT.text,
+                    "open_bank": bankBranchTF.text,
+                    
             ] as [String : AnyObject]
         
         UserDefaults.standard.set(cardT.text?.removeAllSapce, forKey: USER_BANK_CARD)
         UserDefaults.standard.set(nameT.text, forKey: USER_BANK_NAME)
-        
+        UserDefaults.standard.set(bankBranchTF.text, forKey: BANK_BRANCH)
         
         
         let str = SecureTool.finalStr(short_url: "setbank", full_url: API_SETBANCK_URL)

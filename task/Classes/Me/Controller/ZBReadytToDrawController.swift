@@ -17,60 +17,45 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
     var card :String?
     
     var name :String?
-    
+    var bankBranch : String?
     
     @IBOutlet weak var balanceT: UILabel!
-    
     @IBOutlet weak var bankNumL: UILabel!
-    
     @IBOutlet weak var nameL: UILabel!
-    
     @IBOutlet weak var nextBtn: UIButton!
-    
     @IBOutlet weak var amountT: UITextField!
+    @IBOutlet weak var bankBranchL: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupConfig()
-        
-        
         let bank_card  = User.GetUser().bank_card as! NSString
-     
-        
+    
         if UserDefaults.standard.bool(forKey: SETBANK) {
             
-            
             let str =  UserDefaults.standard.object(forKey: USER_BANK_CARD) as! String
-            
             bankNumL.text = addSpace(num:str ) as? String
-            
             nameL.text =  UserDefaults.standard.object(forKey: USER_BANK_NAME) as! String
-        }else{
+            bankBranchL.text =  UserDefaults.standard.object(forKey: BANK_BRANCH) as! String
             
+        }else{
             if bank_card.length > 3 {
-                
                 bankNumL.text =    addSpace(num: User.GetUser().bank_card) as? String
-                
                 nameL.text = User.GetUser().card_name
+                bankBranchL.text = User.GetUser().open_bank
             }else{
-                
                 
                 bankNumL.text = card
                 nameL.text = name
+                bankBranchL.text = bankBranch
             }
         }
-        
-        
- 
        let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE")
-        
         balanceT.text = " ¥ \(balance!)"
         
-       
-        
-        
-
+  
         
     }
     
@@ -78,54 +63,32 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
     
     func addSpace(num:String?)->NSString?{
         
-        
         var str = num! as NSString
-        
         str = str.getNewBankNumWitOldBankNum(str as String! )! as NSString
-        
         return str
         
     }
-    
-    
-    
-    func checkbalance(){
-        
 
-        
+    func checkbalance(){
+
         let str = SecureTool.finalStr(short_url: "profile", full_url: API_GETPROFILE_URL)
-        
         NetworkTool.getTaskList(url: str, completionHandler: { (json) in
-            
-            print(json)
-            
+    
             if json["message"].stringValue != "success"{
-                
                 return
             }
-            
             let dataArr  = json["data"].dictionaryValue
-            
             if  dataArr["account"] == nil    ||  dataArr["finished"] == nil  {
                 return
                 
             }
-            
-          
-            
-            
         })
-        
     }
-    
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     
         amountT.resignFirstResponder()
     }
-    
-    
-    
     
     
     @IBAction func next(_ sender: Any) {
@@ -136,7 +99,6 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
              self.showHint(hint: "请输入金额")
             return
         }
-        
         
         if  Double(amountT.text!)!  >  Double(balance)! {
             self.showHint(hint: "余额不足")

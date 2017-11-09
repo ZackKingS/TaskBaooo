@@ -15,6 +15,9 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
     @IBOutlet weak var card: UITextField!
     @IBOutlet weak var nameL: UITextField!
     @IBOutlet weak var fixBtn: UIButton!
+    @IBOutlet weak var bankBranch: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,24 +52,25 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
     @IBAction func fix(_ sender: Any) {
         
         
-        if (card.text?.characters.count)! > 24 {
+        if (card.text?.count)! > 24 {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (card.text?.characters.count)! < 20   {
+        if (card.text?.count)! < 20   {
             self.showHint(hint: "请输入正确的银行卡号")
             return
         }
         
-        if (card.text?.characters.count)! < 2 {
+        if (card.text?.count)! < 2 {
             self.showHint(hint: "请输入收款人")
             return
         }
         
         let para = ["id":User.GetUser().id,
                     "card":card.text?.removeAllSapce,
-                    "name": nameL.text
+                    "name": nameL.text,
+                    "open_bank": bankBranch.text
             
             
             ] as [String : AnyObject]
@@ -74,7 +78,7 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
         
         UserDefaults.standard.set(card.text?.removeAllSapce, forKey: USER_BANK_CARD)
         UserDefaults.standard.set(nameL.text, forKey: USER_BANK_NAME)
-        
+         UserDefaults.standard.set(bankBranch.text, forKey: BANK_BRANCH)
         
         
         let str = SecureTool.finalStr(short_url: "setbank", full_url: API_SETBANCK_URL)
@@ -138,6 +142,7 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
             let str = UserDefaults.standard.object(forKey: USER_BANK_CARD) as! NSString
             nameL.text = UserDefaults.standard.object(forKey: USER_BANK_NAME) as? String
             card.text = str.getNewBankNumWitOldBankNum(str as String!)
+            bankBranch.text = UserDefaults.standard.object(forKey: BANK_BRANCH) as? String
             
             
         }else{
@@ -147,6 +152,7 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
                 let strr =  User.GetUser().bank_card! as NSString
                 card.text  = strr.getNewBankNumWitOldBankNum(strr as String!)
                 nameL.text  = User.GetUser().card_name
+                 bankBranch.text =  User.GetUser().open_bank
             }
         }
         
