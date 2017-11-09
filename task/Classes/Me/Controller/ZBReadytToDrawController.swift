@@ -26,11 +26,26 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var amountT: UITextField!
     @IBOutlet weak var bankBranchL: UILabel!
     
+  
+    @IBOutlet weak var botCons: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupConfig()
+        
+        
+        if isIPhone6 {
+            botCons.constant = 50
+        }else if isIPhone6P {
+            
+            botCons.constant = 87
+        }
+        
+        
+        
+        
+        
         let bank_card  = User.GetUser().bank_card as! NSString
     
         if UserDefaults.standard.bool(forKey: SETBANK) {
@@ -45,6 +60,9 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
                 bankNumL.text =    addSpace(num: User.GetUser().bank_card) as? String
                 nameL.text = User.GetUser().card_name
                 bankBranchL.text = User.GetUser().open_bank
+                
+                print( User.GetUser().open_bank)
+                
             }else{
                 
                 bankNumL.text = card
@@ -105,21 +123,51 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
             return
         }
         
-        if  Int(amountT.text!)!  < 100 {
-            self.showHint(hint: "提现金额请高于100元")
-            return
-        }
+//        if  Int(amountT.text!)!  < 100 {
+//            self.showHint(hint: "提现金额请高于100元")
+//            return
+//        }
 
-        let para = ["id":User.GetUser().id,
-                    "card":User.GetUser().bank_card,
-                    "name": User.GetUser().card_name,
-                    "money":amountT.text
-            ] as [String : AnyObject]
+//        let para = ["id":User.GetUser().id as AnyObject,
+//                    "card":User.GetUser().bank_card as AnyObject,
+//                    "name": User.GetUser().card_name as AnyObject,
+//                    "money":amountT.text as AnyObject,
+//                    "open_bank":bankBranchL.text
+//            ] as [String : AnyObject]
+        
+        let   para : [String : AnyObject]?
+        
+        if UserDefaults.standard.bool(forKey: SETBANK) {
+            
+      
+            
+             para = ["id":User.GetUser().id as AnyObject,
+                        "card":UserDefaults.standard.object(forKey: USER_BANK_CARD) as! String,
+                        "name": UserDefaults.standard.object(forKey: USER_BANK_NAME) as! String,
+                        "money":amountT.text as AnyObject,
+                        "open_bank":UserDefaults.standard.object(forKey: BANK_BRANCH) as! String
+                ] as [String : AnyObject]
+            
+        }else{
+             para = ["id":User.GetUser().id as AnyObject,
+                        "card":User.GetUser().bank_card as AnyObject,
+                        "name": User.GetUser().card_name as AnyObject,
+                        "money":amountT.text as AnyObject,
+                        "open_bank":User.GetUser().open_bank
+                ] as [String : AnyObject]
+        }
+        
+        
+        
+        
+        print(para!)
         
         let str = SecureTool.finalStr(short_url: "encashment", full_url: API_ENCASHMENT_URL)
         SVProgressHUD.show()
         
-        NetworkTool.postMesa(url: str, parameters: para) { (value) in
+        print(str)
+        
+        NetworkTool.postMesa(url: str, parameters: para!) { (value) in
             SVProgressHUD.dismiss()
             let json = JSON(value ?? "123")
             if  json["message"].stringValue == "success" {
@@ -127,6 +175,9 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
                 result.money =   Int(self.amountT.text!)
                 result.is_success =  -1
                     self.navigationController?.pushViewController(result, animated: true)
+            }else{
+                
+                self.showHint(hint: json["message"].stringValue)
             }
             
             

@@ -15,6 +15,7 @@
                 <outlet property="balanceT" destination="FAN-8i-75I" id="uYj-85-xTL"/>
                 <outlet property="bankBranchL" destination="5GA-Rw-qek" id="kKv-SZ-bXw"/>
                 <outlet property="bankNumL" destination="dM1-px-kS5" id="4Gm-Y0-hO0"/>
+                <outlet property="botCons" destination="gAf-uV-2WE" id="Jfn-kM-eqV"/>
                 <outlet property="nameL" destination="LpM-YW-GmZ" id="xOM-8i-vTG"/>
                 <outlet property="nextBtn" destination="mkT-UO-5ks" id="c5G-wK-Z68"/>
                 <outlet property="view" destination="iN0-l3-epB" id="M5Q-th-v2V"/>

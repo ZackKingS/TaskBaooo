@@ -21,6 +21,7 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var bankBranchTF: UITextField!
     
     
+    @IBOutlet weak var botCons: NSLayoutConstraint!
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -35,6 +36,13 @@ class ZBWithDrawController: UIViewController ,UITextFieldDelegate{
         setupConfig()
         
      cardT.delegate = self
+        
+        if isIPhone6 {
+            botCons.constant = 50
+        }else if isIPhone6P {
+            
+            botCons.constant = 87
+        }
         
     }
     

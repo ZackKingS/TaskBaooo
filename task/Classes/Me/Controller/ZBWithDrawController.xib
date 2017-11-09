@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZBWithDrawController" customModule="task" customModuleProvider="target">
             <connections>
                 <outlet property="bankBranchTF" destination="ASx-28-q95" id="uaw-dv-ybP"/>
+                <outlet property="botCons" destination="efs-gN-AHz" id="Yf2-R9-Dao"/>
                 <outlet property="cardT" destination="5fN-IY-phc" id="yqL-cA-vea"/>
                 <outlet property="nameT" destination="ryb-wm-Ikq" id="bpT-qy-39p"/>
                 <outlet property="nextBtn" destination="Ifr-ng-k4S" id="iq3-tn-Ckc"/>

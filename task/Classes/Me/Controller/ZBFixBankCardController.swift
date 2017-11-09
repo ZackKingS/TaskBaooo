@@ -128,6 +128,9 @@ class ZBFixBankCardController: UIViewController  ,UITextFieldDelegate {
     nameL.layer.borderColor = UIColor.lightGray.cgColor;
         nameL.layer.borderWidth = 1.0
         
+        bankBranch.layer.borderColor = UIColor.lightGray.cgColor;
+        bankBranch.layer.borderWidth = 1.0
+        
     navigationController?.navigationBar.titleTextAttributes = [
     NSForegroundColorAttributeName: UIColor.white,
     NSFontAttributeName: UIFont.systemFont(ofSize: 18)
