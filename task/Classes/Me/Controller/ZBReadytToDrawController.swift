@@ -73,12 +73,9 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
        let  balance =   UserDefaults.standard.object(forKey: "USER_BALANCE")
         balanceT.text = " ¥ \(balance!)"
         
-  
-        
     }
     
-    
-    
+
     func addSpace(num:String?)->NSString?{
         
         var str = num! as NSString
@@ -123,17 +120,25 @@ class ZBReadytToDrawController: UIViewController ,UITextFieldDelegate{
             return
         }
         
-//        if  Int(amountT.text!)!  < 100 {
-//            self.showHint(hint: "提现金额请高于100元")
-//            return
-//        }
+        
+        #if  DEBUG
 
-//        let para = ["id":User.GetUser().id as AnyObject,
-//                    "card":User.GetUser().bank_card as AnyObject,
-//                    "name": User.GetUser().card_name as AnyObject,
-//                    "money":amountT.text as AnyObject,
-//                    "open_bank":bankBranchL.text
-//            ] as [String : AnyObject]
+           
+            print("DEBUG")
+            
+        #else
+      
+            print("release")
+            
+            if  Int(amountT.text!)!  < 100 {
+                self.showHint(hint: "提现金额请高于100元")
+                return
+            }
+
+         #endif
+      
+
+
         
         let   para : [String : AnyObject]?
         
