@@ -45,7 +45,7 @@ class QQDRrawerViewController: UIViewController {
             //  创建遮罩按钮
             let coverButton = UIButton.init()
             
-            coverButton.setBackgroundImage(UIImage.init(named: "bg"), for: .normal)
+//            coverButton.setBackgroundImage(UIImage.init(named: "bg"), for: .normal)
             
             coverButton.alpha =  0.2
      
