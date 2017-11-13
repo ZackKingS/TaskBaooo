@@ -109,12 +109,26 @@ class ZBBanlanceController: UIViewController,UITableViewDelegate,UITableViewData
                  */
                 
                 let dataArr  = json["data"].arrayValue
-                
+
+                var i = 0
                 var temparr = [Tasks]()
                 for dict    in dataArr{
-                    print(dict)
+                    if i == 0 {
+
+                        let dic = [  "description" : "余额明细",
+                                     "create_time" :" ",
+                                     "money" : " 1"
+                            ] as [String : JSON]
+
+                        let task    = Tasks.init(dictt: (dic  ))
+                        temparr.append(task)
+                    }
+                    
                     let task    = Tasks.init(dictt: (dict.dictionaryValue  ))
                     temparr.append(task)
+                    
+                    i = i + 1
+
                 }
                 
                 self!.tableView?.mj_header.endRefreshing()
@@ -316,17 +330,7 @@ class ZBBanlanceController: UIViewController,UITableViewDelegate,UITableViewData
     
     func withdrew(){
         
-//
-//        if UserDefaults.standard.bool(forKey: SETBANK)       {    //绑定了
-//
-//            let withdraw =  ZBReadytToDrawController()
-//            navigationController?.pushViewController(withdraw, animated: true)
-//
-//        }else {  //未绑定
-//            let withdraw =  ZBWithDrawController()
-//            navigationController?.pushViewController(withdraw, animated: true)
-//        }
-     
+
         
         let bank_card  = User.GetUser().bank_card as! NSString
         
@@ -432,13 +436,23 @@ class ZBBanlanceController: UIViewController,UITableViewDelegate,UITableViewData
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90;
+        
+        
+        if indexPath.row == 0 {
+            return 60;
+        }else{
+            return 90;
+        }
+    
+        
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
+    
+ 
     
     // MARK:========  点击cell============
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

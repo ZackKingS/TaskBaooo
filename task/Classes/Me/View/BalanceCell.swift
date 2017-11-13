@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import SnapKit
 class BalanceCell: UITableViewCell {
     
   
@@ -20,7 +21,7 @@ class BalanceCell: UITableViewCell {
     var date_L :UILabel?
     
  
-    
+    var leftConstrains: Constraint?
     
     
     // MARK:- 自定义属性
@@ -31,8 +32,18 @@ class BalanceCell: UITableViewCell {
                 return
             }
             
+            if  viewModel.descriptionz == "余额明细" {
+                
+                self.leftConstrains?.update(offset: 80)
+            }
+            
             task_NameL?.text = viewModel.descriptionz
             task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
+
+            
+           
+            
+            
             
             if viewModel.plus_or_minus == "1"{
                 
@@ -44,9 +55,14 @@ class BalanceCell: UITableViewCell {
             price_L?.textColor = UIColor.colorWithHexString(Color_Value: "333333", alpha: 1)
             
         
+            
+            if viewModel.create_time != nil {
+                
+                date_L?.text = "\(viewModel.create_time! )"
+                date_L?.textColor = UIColor.colorWithHexString(Color_Value: "999999", alpha: 1)
+            }
 
-             date_L?.text = "\(viewModel.create_time! )"
-            date_L?.textColor = UIColor.colorWithHexString(Color_Value: "999999", alpha: 1)
+            
         }
         
         
@@ -82,15 +98,19 @@ class BalanceCell: UITableViewCell {
         self.addSubview(taskNameL)
         taskNameL.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(17)
-            make.left.equalTo(self).offset(35)
+//            make.left.equalTo(self).offset(35)
             make.width.equalTo(200)
             make.height.equalTo(30)
+            
+            self.leftConstrains =   make.left.equalTo(self).offset(35).constraint
+            
         }
         
+
         
         let priceL = UILabel()
         price_L = priceL
-        priceL.text = "+ 20"
+        priceL.text = ""
         priceL.font = UIFont.systemFont(ofSize: 20)
         self.addSubview(priceL)
         priceL.snp.makeConstraints { (make) in
