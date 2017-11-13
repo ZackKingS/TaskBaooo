@@ -20,7 +20,7 @@ class BalanceCell: UITableViewCell {
     
     var date_L :UILabel?
     
- 
+ var icon :UIImageView?
     var leftConstrains: Constraint?
     
     
@@ -35,10 +35,18 @@ class BalanceCell: UITableViewCell {
             if  viewModel.descriptionz == "余额明细" {
                 
                 self.leftConstrains?.update(offset: 80)
+                icon?.isHidden = false
+                task_NameL?.text = viewModel.descriptionz
+                task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
+            }else{
+                
+                task_NameL?.text = viewModel.descriptionz
+                task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
+                icon?.isHidden = true
             }
             
-            task_NameL?.text = viewModel.descriptionz
-            task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
+//            task_NameL?.text = viewModel.descriptionz
+//            task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
 
             
            
@@ -88,6 +96,19 @@ class BalanceCell: UITableViewCell {
     func setupUI()  {
         
       
+        
+        
+        let icon_wallet = UIImageView()
+        icon = icon_wallet
+        icon_wallet.image = UIImage.init(named: "wale")
+        self.addSubview(icon_wallet)
+        icon_wallet.snp.makeConstraints { (make) in
+            make.top.equalTo(self).offset(17)
+            make.left.equalTo(self).offset(35)
+            make.width.equalTo(26)
+            make.height.equalTo(26)
+        }
+        
         
         
         let taskNameL = UILabel()
