@@ -250,8 +250,8 @@ class ZBBanlanceController: UIViewController,UITableViewDelegate,UITableViewData
         finiTasskL.font = UIFont.systemFont(ofSize: 15)
         inview.addSubview(finiTasskL)
         finiTasskL.snp.makeConstraints { (make) in
-            make.top.equalTo(inview).offset(20)
-            make.left.equalTo(inview).offset(70)
+            make.top.equalTo(inview).offset(25)
+            make.left.equalTo(inview).offset(64)
             make.width.equalTo(200)
             make.height.equalTo(15)
         }
@@ -261,7 +261,7 @@ class ZBBanlanceController: UIViewController,UITableViewDelegate,UITableViewData
         inview.addSubview(icon_wallet)
         icon_wallet.snp.makeConstraints { (make) in
             make.top.equalTo(inview).offset(20)
-            make.left.equalTo(inview).offset(20)
+            make.left.equalTo(inview).offset(23)
             make.width.equalTo(20)
             make.height.equalTo(20)
         }

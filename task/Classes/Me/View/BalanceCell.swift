@@ -32,7 +32,7 @@ class BalanceCell: UITableViewCell {
             }
             
             task_NameL?.text = viewModel.descriptionz
-            
+            task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
             
             if viewModel.plus_or_minus == "1"{
                 
@@ -41,12 +41,12 @@ class BalanceCell: UITableViewCell {
               price_L?.text = "- \(viewModel.money!)"
             }
             
-            
+            price_L?.textColor = UIColor.colorWithHexString(Color_Value: "333333", alpha: 1)
             
         
 
              date_L?.text = "\(viewModel.create_time! )"
-            
+            date_L?.textColor = UIColor.colorWithHexString(Color_Value: "999999", alpha: 1)
         }
         
         
