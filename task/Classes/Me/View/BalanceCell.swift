@@ -100,7 +100,7 @@ class BalanceCell: UITableViewCell {
         
         let icon_wallet = UIImageView()
         icon = icon_wallet
-        icon_wallet.image = UIImage.init(named: "wale")
+        icon_wallet.image = UIImage.init(named: "account_detail_logo")
         self.addSubview(icon_wallet)
         icon_wallet.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(17)
