@@ -36,17 +36,13 @@ class BalanceCell: UITableViewCell {
                 
                 self.leftConstrains?.update(offset: 80)
                 icon?.isHidden = false
-                task_NameL?.text = viewModel.descriptionz
-                task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
+
             }else{
-                
-                task_NameL?.text = viewModel.descriptionz
-                task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
                 icon?.isHidden = true
             }
             
-//            task_NameL?.text = viewModel.descriptionz
-//            task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
+            task_NameL?.text = viewModel.descriptionz
+            task_NameL?.textColor = UIColor.colorWithHexString(Color_Value: "666666", alpha: 1)
 
             
            
