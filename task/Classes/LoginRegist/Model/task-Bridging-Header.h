@@ -23,3 +23,5 @@
 
 
 #import "NSString+AddSpaceTool.h"
+
+#import "UIViewController+CWLateralSlide.h"

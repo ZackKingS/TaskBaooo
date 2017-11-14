@@ -83,6 +83,11 @@
 		3A839E891F6BE2470024B9B0 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A839E881F6BE2470024B9B0 /* NetworkTool.swift */; };
 		3AB9D1E91F751AFD00BB3A68 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9D1E81F751AFD00BB3A68 /* Tasks.swift */; };
 		3AB9D1ED1F75221D00BB3A68 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9D1EC1F75221D00BB3A68 /* TaskDetailViewController.swift */; };
+		3ACCC1E11FBA8376002175D7 /* CWInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCC1D71FBA8376002175D7 /* CWInteractiveTransition.m */; };
+		3ACCC1E21FBA8376002175D7 /* UIViewController+CWLateralSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCC1DA1FBA8376002175D7 /* UIViewController+CWLateralSlide.m */; };
+		3ACCC1E31FBA8376002175D7 /* CWLateralSlideAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCC1DD1FBA8376002175D7 /* CWLateralSlideAnimator.m */; };
+		3ACCC1E41FBA8376002175D7 /* CWDrawerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCC1DE1FBA8376002175D7 /* CWDrawerTransition.m */; };
+		3ACCC1E51FBA8376002175D7 /* CWLateralSlideConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACCC1E01FBA8376002175D7 /* CWLateralSlideConfiguration.m */; };
 		3ACE8AD41F7DE62C003BF779 /* ZBFinishedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE8AD31F7DE62C003BF779 /* ZBFinishedController.swift */; };
 		3AD1BC961F99DB280082D0ED /* ZBAboutMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1BC951F99DB280082D0ED /* ZBAboutMe.swift */; };
 		3AD1BC9A1F99DB450082D0ED /* ZBAboutMe.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AD1BC991F99DB450082D0ED /* ZBAboutMe.xib */; };
@@ -207,6 +212,16 @@
 		3A839E881F6BE2470024B9B0 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		3AB9D1E81F751AFD00BB3A68 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		3AB9D1EC1F75221D00BB3A68 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		3ACCC1D71FBA8376002175D7 /* CWInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWInteractiveTransition.m; sourceTree = "<group>"; };
+		3ACCC1D81FBA8376002175D7 /* CWDrawerTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWDrawerTransition.h; sourceTree = "<group>"; };
+		3ACCC1D91FBA8376002175D7 /* CWLateralSlideAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLateralSlideAnimator.h; sourceTree = "<group>"; };
+		3ACCC1DA1FBA8376002175D7 /* UIViewController+CWLateralSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWLateralSlide.m"; sourceTree = "<group>"; };
+		3ACCC1DB1FBA8376002175D7 /* CWLateralSlideConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWLateralSlideConfiguration.h; sourceTree = "<group>"; };
+		3ACCC1DC1FBA8376002175D7 /* CWInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWInteractiveTransition.h; sourceTree = "<group>"; };
+		3ACCC1DD1FBA8376002175D7 /* CWLateralSlideAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWLateralSlideAnimator.m; sourceTree = "<group>"; };
+		3ACCC1DE1FBA8376002175D7 /* CWDrawerTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWDrawerTransition.m; sourceTree = "<group>"; };
+		3ACCC1DF1FBA8376002175D7 /* UIViewController+CWLateralSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWLateralSlide.h"; sourceTree = "<group>"; };
+		3ACCC1E01FBA8376002175D7 /* CWLateralSlideConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWLateralSlideConfiguration.m; sourceTree = "<group>"; };
 		3ACE8AD31F7DE62C003BF779 /* ZBFinishedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ZBFinishedController.swift; path = task/Classes/Me/ZBFinishedController.swift; sourceTree = SOURCE_ROOT; };
 		3AD1BC951F99DB280082D0ED /* ZBAboutMe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBAboutMe.swift; sourceTree = "<group>"; };
 		3AD1BC991F99DB450082D0ED /* ZBAboutMe.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBAboutMe.xib; sourceTree = "<group>"; };
@@ -269,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				3A27D7EA1F7DFB67003AD58A /* TakePhoto */,
+				3ACCC1D61FBA8376002175D7 /* CWLateralSlide */,
 				3A097CB11F6FB9B800222AEA /* LLCycleScrollView */,
 				3A097CB81F6FB9B800222AEA /* LLCycleScrollView.bundle */,
 			);
@@ -523,6 +539,23 @@
 				3AD3FBE21F6BE42A007406E1 /* View */,
 			);
 			path = Tasking;
+			sourceTree = "<group>";
+		};
+		3ACCC1D61FBA8376002175D7 /* CWLateralSlide */ = {
+			isa = PBXGroup;
+			children = (
+				3ACCC1D71FBA8376002175D7 /* CWInteractiveTransition.m */,
+				3ACCC1D81FBA8376002175D7 /* CWDrawerTransition.h */,
+				3ACCC1D91FBA8376002175D7 /* CWLateralSlideAnimator.h */,
+				3ACCC1DB1FBA8376002175D7 /* CWLateralSlideConfiguration.h */,
+				3ACCC1DC1FBA8376002175D7 /* CWInteractiveTransition.h */,
+				3ACCC1DD1FBA8376002175D7 /* CWLateralSlideAnimator.m */,
+				3ACCC1DE1FBA8376002175D7 /* CWDrawerTransition.m */,
+				3ACCC1DF1FBA8376002175D7 /* UIViewController+CWLateralSlide.h */,
+				3ACCC1DA1FBA8376002175D7 /* UIViewController+CWLateralSlide.m */,
+				3ACCC1E01FBA8376002175D7 /* CWLateralSlideConfiguration.m */,
+			);
+			path = CWLateralSlide;
 			sourceTree = "<group>";
 		};
 		3AD3FBDF1F6BE42A007406E1 /* Controller */ = {
@@ -788,6 +821,7 @@
 				3A3BB4CF1F8C5CB600B87EB4 /* TaskDetailCell.m in Sources */,
 				3A5CD3121F7F374500B706CB /* TableViewController.m in Sources */,
 				3A111CA11F79FB3400675991 /* ZBRegistViewController.swift in Sources */,
+				3ACCC1E21FBA8376002175D7 /* UIViewController+CWLateralSlide.m in Sources */,
 				3A111C9F1F79F89900675991 /* UIButton+Extension.swift in Sources */,
 				3A3E6AAE1F7B7C120025E63B /* ZBTaskUnderReviewController.swift in Sources */,
 				3A111C991F79E43D00675991 /* ZBLoginController.swift in Sources */,
@@ -819,10 +853,13 @@
 				3A839E821F6BDD160024B9B0 /* TasksViewController.swift in Sources */,
 				3A097CA71F6FAE9F00222AEA /* QQDRrawerViewController.swift in Sources */,
 				3A3E6AAA1F7B731E0025E63B /* ZBStartTaskController.swift in Sources */,
+				3ACCC1E51FBA8376002175D7 /* CWLateralSlideConfiguration.m in Sources */,
 				3A3BB4DA1F8C7AFE00B87EB4 /* BalanceCell.swift in Sources */,
+				3ACCC1E41FBA8376002175D7 /* CWDrawerTransition.m in Sources */,
 				3A097CBA1F6FB9B800222AEA /* LLCycleScrollViewCell.swift in Sources */,
 				3A839E851F6BDD170024B9B0 /* ZBNavVC.swift in Sources */,
 				3A506E831F7A53E0004DF7C3 /* ZBCleanTool.swift in Sources */,
+				3ACCC1E31FBA8376002175D7 /* CWLateralSlideAnimator.m in Sources */,
 				3A5CD3131F7F374500B706CB /* PushViewcontroller.swift in Sources */,
 				3A097CAB1F6FAE9F00222AEA /* ZBLeftViewController.swift in Sources */,
 				3A0C17221F8B437F0081C54C /* ZBBanlanceController.swift in Sources */,
@@ -839,6 +876,7 @@
 				3A3E6AB61F7B859C0025E63B /* ZBTaskFailController.swift in Sources */,
 				3A4531001F909F040069B97F /* RefreshFooter.swift in Sources */,
 				3A5CD30F1F7F374500B706CB /* ViewController.m in Sources */,
+				3ACCC1E11FBA8376002175D7 /* CWInteractiveTransition.m in Sources */,
 				3A097CBB1F6FB9B800222AEA /* LLFilledPageControl.swift in Sources */,
 				3A097CBE1F6FB9B800222AEA /* LLViewExtensions.swift in Sources */,
 				3AD3FBE51F6BE452007406E1 /* Const.swift in Sources */,

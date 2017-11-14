@@ -270,9 +270,18 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
             
             if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY)  { //已经登录
                   NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "pushfinish")))
+
+                
+                
+//                self.dismiss(animated: true, completion: nil)
+//                navigationController?.pushViewController( ZBFinishedController(), animated: true)
+                
             }else{                //未登录
                 
                  NotificationCenter.default.post(Notification.init(name: Notification.Name(rawValue: "gologin")))
+                
+             
+                
             }
      
         }else if   indexPath.row == 1{

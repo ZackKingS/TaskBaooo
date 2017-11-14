@@ -28,9 +28,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         window = UIWindow(frame: UIScreen.main.bounds)
 
      
+//        let nav  = ZBNavVC.init(rootViewController: TasksViewController())
+//        self.window?.rootViewController = QQDRrawerViewController.drawerWithViewController(_leftViewcontroller: ZBLeftViewController.init(),_mainViewController: nav,DrawerMaxWithd: kMaxLeftOffset)
+//        self.window?.makeKeyAndVisible()
+        
+        
+        
         let nav  = ZBNavVC.init(rootViewController: TasksViewController())
-        self.window?.rootViewController = QQDRrawerViewController.drawerWithViewController(_leftViewcontroller: ZBLeftViewController.init(),_mainViewController: nav,DrawerMaxWithd: kMaxLeftOffset)
+        self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
+        
+        
         
         // 检测用户是不是第一次启动
         config()

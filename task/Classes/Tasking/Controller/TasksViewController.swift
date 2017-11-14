@@ -32,7 +32,7 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setRefresh()
+//        setRefresh()
         JANALYTICSService.startLogPageView("TasksViewController")
 
 
@@ -53,6 +53,13 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         checkupdate ()
         
  
+        cw_registerShowIntractive(withEdgeGesture: false, direction: .left) {
+            
+            self.tapped(UIButton())
+        }
+        
+        
+        
     }
     
     func layoutDecisionByNetwork(){
@@ -134,8 +141,10 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @objc  func   withdraw(){
         
-               QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+//               QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
         
+        
+                self.dismiss(animated: true, completion: nil)
         
         
         if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY){
@@ -254,10 +263,12 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @objc  func   gologin(){
         
-        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
-        let nav = ZBNavVC.init(rootViewController: ZBLoginController())
-        present(nav, animated: true, completion: nil)
+
         
+        self.dismiss(animated: true, completion: nil)
+        
+                let nav = ZBNavVC.init(rootViewController: ZBLoginController())
+                present(nav, animated: true, completion: nil)
     }
     
     
@@ -271,7 +282,10 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         
         //1 close
-        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+//        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+        
+                self.dismiss(animated: true, completion: nil)
+        
         //2.push
         navigationController?.pushViewController(ZBSetingController(), animated: true)
         
@@ -280,9 +294,9 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @objc  func   pushfinish(){
         
-        
+                self.dismiss(animated: true, completion: nil)
          //1 close
-        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+//        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
         //2.push
         navigationController?.pushViewController(ZBFinishedController(), animated: true)
         
@@ -290,8 +304,9 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @objc  func   pushfinishhh(){
         
+                self.dismiss(animated: true, completion: nil)
         //1 close
-        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+//        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
         //2.push
         navigationController?.pushViewController(ZBBanlanceController(), animated: true)
         
@@ -299,7 +314,8 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @objc  func   closeTheDrawer(){
         //1 close
-        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
+                self.dismiss(animated: true, completion: nil)
+//        QQDRrawerViewController.sharedDrawerViewController.closeDrawer(closeDrawerWithDuration: 0.2)
       let setting =  UIStoryboard.init(name: "ZBSetingController", bundle: nil).instantiateInitialViewController()
         //2.push
         navigationController?.pushViewController(setting!, animated: true)
@@ -364,9 +380,11 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     func tapped(_ button:UIButton){
 
-        QQDRrawerViewController.sharedDrawerViewController.openDrawer(openDrawerWithDuration: 0.2)
+//        QQDRrawerViewController.sharedDrawerViewController.openDrawer(openDrawerWithDuration: 0.2)
         
  
+        cw_showDrawerViewController(ZBLeftViewController(), animationType: .default, configuration: nil)
+        
     }
     /// 打开抽屉效果
     func openDrawer(){
