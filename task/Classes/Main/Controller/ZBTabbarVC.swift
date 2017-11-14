@@ -29,9 +29,9 @@ class ZBTabbarVC: UITabBarController {
 
     private func addChildViewControllers(){
         
-        
-        addChildViewController(childController: TasksViewController(), title: "adv")
-        addChildViewController(childController: MeVC(), title: "me")
+       
+        addChildViewController(childController: TasksViewController(), title: "task")
+
         
     }
     

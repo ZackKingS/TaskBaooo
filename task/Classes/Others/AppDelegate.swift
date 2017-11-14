@@ -34,9 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
         
         
         
-        let nav  = ZBNavVC.init(rootViewController: TasksViewController())
-        self.window?.rootViewController = nav
+      
+//        self.window?.rootViewController = ZBTabbarVC()
+//        self.window?.makeKeyAndVisible()
+        
+        
+        
+        self.window?.rootViewController = ZBNavVC.init(rootViewController: TasksViewController())
         self.window?.makeKeyAndVisible()
+        
         
         
         
