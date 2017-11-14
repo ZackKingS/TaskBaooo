@@ -118,13 +118,6 @@ class QQDRrawerViewController: UIViewController {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: { 
             if pan.state == UIGestureRecognizerState.changed && offsetX < self.maxWidth! {
                 
-                print(offsetX / screenWidth)
-                
-                
-//                 self.setCoverButton(alp:  offsetX / screenWidth )
-////
-//                  self.mainViewController?.view.addSubview(self.coverButton!)
-                
 
                 
                 self.mainViewController?.view.transform = CGAffineTransform.init(translationX: offsetX, y: 0)
