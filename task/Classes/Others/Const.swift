@@ -6,6 +6,26 @@
 //  Copyright © 2017年 hrscy. All rights reserved.
 //
 
+// ┏┓　　　┏┓
+// ┏┛┻━━━┛┻┓
+// ┃　　　　　　　┃
+// ┃　　　━　　　┃
+// ┃　┳┛　┗┳　┃
+// ┃　　　　　　　┃
+// ┃　　　┻　　　┃
+// ┃　　　　　　　┃
+// ┗━┓　　　┏━┛
+// ┃　　　┃ 神兽保佑
+// ┃　　　┃ 代码无BUG！
+// ┃　　　┗━━━┓
+// ┃　　　　　　　┣┓
+// ┃　　　　　　　┏┛
+// ┗┓┓┏━┳┓┏┛
+// ┃┫┫　┃┫┫
+//
+
+
+
 import UIKit
 import AdSupport // 广告
 
@@ -160,6 +180,9 @@ let API_SETBANCK_URL = BaseURL +  "v1/user/setbank"
 //绑定银行卡
 let API_ENCASHMENT_URL = BaseURL +  "v1/user/encashment"
 
+
+//ONLINE
+let API_ONLINE_URL = BaseURL +  "v1/software/online"
 
 
 

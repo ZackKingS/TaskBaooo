@@ -12,15 +12,10 @@ import Kingfisher
 class TasksCell: UITableViewCell {
     
     var type :String?
-    
     var task_NameL :UILabel?
-    
     var price_L :UILabel?
-    
-        var rightTop_L :UILabel?
-    
+    var rightTop_L :UILabel?
      var date_L :UILabel?
-    
      var bgV :UIImageView?
     var fini :UIImageView?
     
@@ -37,7 +32,7 @@ class TasksCell: UITableViewCell {
 
             task_NameL?.text = viewModel.title
             
-            price_L?.text =  "¥\(viewModel.price!)"
+            price_L?.text =  "\(viewModel.price!)积分"
   
             
             if (type == "1") {

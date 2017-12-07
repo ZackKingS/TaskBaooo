@@ -34,6 +34,13 @@
 		3A18AF091FB1583F00D16A8F /* ZBFixBankCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A18AF081FB1583F00D16A8F /* ZBFixBankCardController.swift */; };
 		3A18AF0B1FB1588100D16A8F /* ZBFixBankCardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A18AF0A1FB1588100D16A8F /* ZBFixBankCardController.xib */; };
 		3A18AF0E1FB18A0F00D16A8F /* NSString+AddSpaceTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A18AF0D1FB18A0F00D16A8F /* NSString+AddSpaceTool.m */; };
+		3A3499A11FC56A9000DA4C7C /* AccessoryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34999A1FC56A8E00DA4C7C /* AccessoryViews.swift */; };
+		3A3499A21FC56A9000DA4C7C /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34999B1FC56A8E00DA4C7C /* GameModel.swift */; };
+		3A3499A31FC56A9000DA4C7C /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34999C1FC56A8E00DA4C7C /* TileView.swift */; };
+		3A3499A41FC56A9000DA4C7C /* NumberTileGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34999D1FC56A8E00DA4C7C /* NumberTileGame.swift */; };
+		3A3499A51FC56A9000DA4C7C /* AuxiliaryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34999E1FC56A8F00DA4C7C /* AuxiliaryModels.swift */; };
+		3A3499A61FC56A9000DA4C7C /* AppearanceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34999F1FC56A8F00DA4C7C /* AppearanceProvider.swift */; };
+		3A3499A71FC56A9000DA4C7C /* GameboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3499A01FC56A8F00DA4C7C /* GameboardView.swift */; };
 		3A3BB4CF1F8C5CB600B87EB4 /* TaskDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BB4CD1F8C5CB600B87EB4 /* TaskDetailCell.m */; };
 		3A3BB4D01F8C5CB600B87EB4 /* TaskDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3BB4CE1F8C5CB600B87EB4 /* TaskDetailCell.xib */; };
 		3A3BB4D31F8C606F00B87EB4 /* SecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3BB4D21F8C606F00B87EB4 /* SecondTableViewController.m */; };
@@ -66,6 +73,10 @@
 		3A5386631FAAFD8800F37F84 /* ZBReadytToDrawController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */; };
 		3A5386651FAB061800F37F84 /* ZBDrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5386641FAB061800F37F84 /* ZBDrawController.swift */; };
 		3A5386671FAB064D00F37F84 /* ZBDrawController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A5386661FAB064D00F37F84 /* ZBDrawController.xib */; };
+		3A53F33D1FD673870038744F /* ZBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53F33B1FD673870038744F /* ZBTableViewController.swift */; };
+		3A53F3401FD673B90038744F /* ZBTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A53F33F1FD673B90038744F /* ZBTableViewController.storyboard */; };
+		3A53F3431FD67C310038744F /* ZBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53F3411FD67C310038744F /* ZBWebViewController.swift */; };
+		3A53F3441FD67C310038744F /* ZBWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A53F3421FD67C310038744F /* ZBWebViewController.xib */; };
 		3A5CD30F1F7F374500B706CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD3061F7F374300B706CB /* ViewController.m */; };
 		3A5CD3101F7F374500B706CB /* TCPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD3081F7F374300B706CB /* TCPagesView.m */; };
 		3A5CD3111F7F374500B706CB /* TcPrgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CD30B1F7F374400B706CB /* TcPrgressView.m */; };
@@ -153,6 +164,13 @@
 		3A27D7FB1F7DFB67003AD58A /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		3A27D7FC1F7DFB67003AD58A /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		3A27D7FD1F7DFB67003AD58A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		3A34999A1FC56A8E00DA4C7C /* AccessoryViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryViews.swift; sourceTree = "<group>"; };
+		3A34999B1FC56A8E00DA4C7C /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		3A34999C1FC56A8E00DA4C7C /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		3A34999D1FC56A8E00DA4C7C /* NumberTileGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTileGame.swift; sourceTree = "<group>"; };
+		3A34999E1FC56A8F00DA4C7C /* AuxiliaryModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuxiliaryModels.swift; sourceTree = "<group>"; };
+		3A34999F1FC56A8F00DA4C7C /* AppearanceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceProvider.swift; sourceTree = "<group>"; };
+		3A3499A01FC56A8F00DA4C7C /* GameboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameboardView.swift; sourceTree = "<group>"; };
 		3A3BB4CC1F8C5CB600B87EB4 /* TaskDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskDetailCell.h; sourceTree = "<group>"; };
 		3A3BB4CD1F8C5CB600B87EB4 /* TaskDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskDetailCell.m; sourceTree = "<group>"; };
 		3A3BB4CE1F8C5CB600B87EB4 /* TaskDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDetailCell.xib; sourceTree = "<group>"; };
@@ -190,6 +208,10 @@
 		3A5386621FAAFD8800F37F84 /* ZBReadytToDrawController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBReadytToDrawController.xib; sourceTree = "<group>"; };
 		3A5386641FAB061800F37F84 /* ZBDrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBDrawController.swift; sourceTree = "<group>"; };
 		3A5386661FAB064D00F37F84 /* ZBDrawController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBDrawController.xib; sourceTree = "<group>"; };
+		3A53F33B1FD673870038744F /* ZBTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBTableViewController.swift; sourceTree = "<group>"; };
+		3A53F33F1FD673B90038744F /* ZBTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZBTableViewController.storyboard; sourceTree = "<group>"; };
+		3A53F3411FD67C310038744F /* ZBWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZBWebViewController.swift; sourceTree = "<group>"; };
+		3A53F3421FD67C310038744F /* ZBWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZBWebViewController.xib; sourceTree = "<group>"; };
 		3A5CD3021F7F371600B706CB /* task-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "task-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A5CD3061F7F374300B706CB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3A5CD3071F7F374300B706CB /* TCPagesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCPagesView.h; sourceTree = "<group>"; };
@@ -448,6 +470,20 @@
 			path = taskdetail;
 			sourceTree = "<group>";
 		};
+		3A5F90AA1FC663A000D52C02 /* 2048 */ = {
+			isa = PBXGroup;
+			children = (
+				3A34999A1FC56A8E00DA4C7C /* AccessoryViews.swift */,
+				3A34999F1FC56A8F00DA4C7C /* AppearanceProvider.swift */,
+				3A34999E1FC56A8F00DA4C7C /* AuxiliaryModels.swift */,
+				3A3499A01FC56A8F00DA4C7C /* GameboardView.swift */,
+				3A34999B1FC56A8E00DA4C7C /* GameModel.swift */,
+				3A34999D1FC56A8E00DA4C7C /* NumberTileGame.swift */,
+				3A34999C1FC56A8E00DA4C7C /* TileView.swift */,
+			);
+			path = 2048;
+			sourceTree = "<group>";
+		};
 		3A826B1384D2DFE2F70F268B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +562,7 @@
 				3A839E771F6BDCAC0024B9B0 /* AppDelegate.swift */,
 				3AD3FBE41F6BE452007406E1 /* Const.swift */,
 				3A110E941F756B61009989D6 /* Reachability.swift */,
+				3A5F90AA1FC663A000D52C02 /* 2048 */,
 				3A839E781F6BDCAC0024B9B0 /* Info.plist */,
 			);
 			path = Others;
@@ -573,6 +610,10 @@
 				3A3E6AB51F7B859C0025E63B /* ZBTaskFailController.swift */,
 				3A3E6AB71F7B85E00025E63B /* ZBTaskFailController.xib */,
 				3AD3FBE61F6BE543007406E1 /* TopicViewController.swift */,
+				3A53F33B1FD673870038744F /* ZBTableViewController.swift */,
+				3A53F33F1FD673B90038744F /* ZBTableViewController.storyboard */,
+				3A53F3411FD67C310038744F /* ZBWebViewController.swift */,
+				3A53F3421FD67C310038744F /* ZBWebViewController.xib */,
 				3A5CD3141F7F375100B706CB /* taskdetail */,
 			);
 			path = Controller;
@@ -743,6 +784,8 @@
 				3AE78DFF1F96EC3800F80497 /* ZBNewFeatureController.storyboard in Resources */,
 				3A53865F1FAAF47400F37F84 /* ZBWithDrawController.xib in Resources */,
 				3A5386631FAAFD8800F37F84 /* ZBReadytToDrawController.xib in Resources */,
+				3A53F3401FD673B90038744F /* ZBTableViewController.storyboard in Resources */,
+				3A53F3441FD67C310038744F /* ZBWebViewController.xib in Resources */,
 				3A3BB4D01F8C5CB600B87EB4 /* TaskDetailCell.xib in Resources */,
 				3A3E6A9E1F7B3B8B0025E63B /* ZBGetPwdBackedController.xib in Resources */,
 				3A3E6AA01F7B4F120025E63B /* TaskDetailViewController.xib in Resources */,
@@ -786,9 +829,36 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-task/Pods-task-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftTheme/SwiftTheme.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftTheme.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -801,13 +871,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-task-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -822,6 +895,7 @@
 				3A5CD3121F7F374500B706CB /* TableViewController.m in Sources */,
 				3A111CA11F79FB3400675991 /* ZBRegistViewController.swift in Sources */,
 				3ACCC1E21FBA8376002175D7 /* UIViewController+CWLateralSlide.m in Sources */,
+				3A3499A21FC56A9000DA4C7C /* GameModel.swift in Sources */,
 				3A111C9F1F79F89900675991 /* UIButton+Extension.swift in Sources */,
 				3A3E6AAE1F7B7C120025E63B /* ZBTaskUnderReviewController.swift in Sources */,
 				3A111C991F79E43D00675991 /* ZBLoginController.swift in Sources */,
@@ -839,12 +913,16 @@
 				3A3E6A9A1F7B39FA0025E63B /* ZBGetPwdBackedController.swift in Sources */,
 				3A506E7F1F7A4240004DF7C3 /* ZBSetingController.swift in Sources */,
 				3A3E6AB21F7B7FE20025E63B /* ZBTaskSuccessController.swift in Sources */,
+				3A53F3431FD67C310038744F /* ZBWebViewController.swift in Sources */,
+				3A3499A11FC56A9000DA4C7C /* AccessoryViews.swift in Sources */,
+				3A3499A41FC56A9000DA4C7C /* NumberTileGame.swift in Sources */,
 				3A5386651FAB061800F37F84 /* ZBDrawController.swift in Sources */,
 				3A839E7A1F6BDCAC0024B9B0 /* AppDelegate.swift in Sources */,
 				3A111CA51F7A0A6D00675991 /* ZBForgotPwdController.swift in Sources */,
 				3A111CA91F7A2C0400675991 /* ZBSetPwdController.swift in Sources */,
 				3A3BB4D71F8C619F00B87EB4 /* SecondTableViewCell.m in Sources */,
 				3AD3FBE31F6BE42A007406E1 /* TopicTitle.swift in Sources */,
+				3A3499A31FC56A9000DA4C7C /* TileView.swift in Sources */,
 				3AB9D1ED1F75221D00BB3A68 /* TaskDetailViewController.swift in Sources */,
 				3A4EBD6E1F7CA45B00C6DDC1 /* User.swift in Sources */,
 				3A1110BC1F78C14F009989D6 /* ZBLeftCell.swift in Sources */,
@@ -853,6 +931,7 @@
 				3A839E821F6BDD160024B9B0 /* TasksViewController.swift in Sources */,
 				3A097CA71F6FAE9F00222AEA /* QQDRrawerViewController.swift in Sources */,
 				3A3E6AAA1F7B731E0025E63B /* ZBStartTaskController.swift in Sources */,
+				3A3499A51FC56A9000DA4C7C /* AuxiliaryModels.swift in Sources */,
 				3ACCC1E51FBA8376002175D7 /* CWLateralSlideConfiguration.m in Sources */,
 				3A3BB4DA1F8C7AFE00B87EB4 /* BalanceCell.swift in Sources */,
 				3ACCC1E41FBA8376002175D7 /* CWDrawerTransition.m in Sources */,
@@ -869,12 +948,15 @@
 				3AD3FBE71F6BE543007406E1 /* TopicViewController.swift in Sources */,
 				3A41A9551F9484660004A30B /* CountDownBtn.swift in Sources */,
 				3A5CD3101F7F374500B706CB /* TCPagesView.m in Sources */,
+				3A3499A71FC56A9000DA4C7C /* GameboardView.swift in Sources */,
 				3A53865D1FAAF43E00F37F84 /* ZBWithDrawController.swift in Sources */,
 				3A3BB4D31F8C606F00B87EB4 /* SecondTableViewController.m in Sources */,
 				3A4531271F945D110069B97F /* UIViewController+ZBHUD.swift in Sources */,
+				3A3499A61FC56A9000DA4C7C /* AppearanceProvider.swift in Sources */,
 				3A097CBC1F6FB9B800222AEA /* LLPillPageControl.swift in Sources */,
 				3A3E6AB61F7B859C0025E63B /* ZBTaskFailController.swift in Sources */,
 				3A4531001F909F040069B97F /* RefreshFooter.swift in Sources */,
+				3A53F33D1FD673870038744F /* ZBTableViewController.swift in Sources */,
 				3A5CD30F1F7F374500B706CB /* ViewController.m in Sources */,
 				3ACCC1E11FBA8376002175D7 /* CWInteractiveTransition.m in Sources */,
 				3A097CBB1F6FB9B800222AEA /* LLFilledPageControl.swift in Sources */,

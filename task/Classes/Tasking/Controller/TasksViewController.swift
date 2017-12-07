@@ -66,8 +66,12 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
         let reachability = Reachability()  // 准备获取网络连接信息
         if (reachability?.isReachable)! { // 判断网络连接状态
-            setupTableVie()
-            setRefresh()
+
+                setupTableVie()
+           
+             setRefresh()
+            
+            
         } else {
             //no_network_Page
             let box = UIView()
@@ -411,9 +415,11 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView?.separatorStyle = .none
         self.view.addSubview(tableView!)
         view.backgroundColor = UIColor.globalBackgroundColor()
-//        automaticallyAdjustsScrollViewInsets = true
+
     }
     
+    
+   
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -462,12 +468,19 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
             if    dataArray[indexPath.row].status == "-1"  {  //任务可开始
                
-                let taskDetailController = ViewController()
-                taskDetailController.taskid =  dataArray[indexPath.row].id
-                taskDetailController.taskName =  dataArray[indexPath.row].title
-                taskDetailController.status =  dataArray[indexPath.row].status
                 
-                self.navigationController?.pushViewController(taskDetailController, animated: true)
+                
+             
+                    
+                    let taskDetailController = ViewController()
+                    taskDetailController.taskid =  dataArray[indexPath.row].id
+                    taskDetailController.taskName =  dataArray[indexPath.row].title
+                    taskDetailController.status =  dataArray[indexPath.row].status
+                    self.navigationController?.pushViewController(taskDetailController, animated: true)
+               
+                
+            
+            
                 
             }else if    dataArray[indexPath.row].status == "0"  { //任务审核中
                  self.navigationController?.pushViewController(ZBTaskUnderReviewController(), animated: true)
@@ -600,13 +613,12 @@ extension TasksViewController {
                
                 let dataArr  = json["data"].arrayValue
 
-             
-                
-                
                 var temparr = [Tasks]()
                 for dict    in dataArr{
                     print(dict)
                     let task    = Tasks.init(dictt: (dict.dictionaryValue  ))
+                    
+                    
                     temparr.append(task)
                 }
    

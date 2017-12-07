@@ -75,17 +75,30 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         view.backgroundColor =  UIColor.themeColor()
         
         
-        //立即提现
-        let withDrawBtn:UIButton = UIButton(type:.custom)
-        withDrawBtn.setTitle("立即提现", for:.normal) //普通状态下的文字
-        withDrawBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        withDrawBtn.setTitleColor(UIColor.white, for: .normal) //普通状态下文字的颜色
-        withDrawBtn.addTarget(self, action: #selector(withDraw), for: .touchUpInside)
-        withDrawBtn.layer.cornerRadius = kScornerRadius
-        withDrawBtn.layer.masksToBounds = true
-        withDrawBtn.backgroundColor = UIColor.colorWithHexString(Color_Value: "#e6761c", alpha: 1.0)
-        view.addSubview(withDrawBtn)
-        withDrawBtn.frame = CGRect.init(x: (kMaxLeftOffset - kwithDrawBtnWidth)/2, y: 40, width: kwithDrawBtnWidth, height: 40)
+        
+        
+        
+        if  UserDefaults.standard.bool(forKey: "isOnline")  {
+            
+            //立即提现
+            let withDrawBtn:UIButton = UIButton(type:.custom)
+            withDrawBtn.setTitle("立即提现", for:.normal) //普通状态下的文字
+            withDrawBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+            withDrawBtn.setTitleColor(UIColor.white, for: .normal) //普通状态下文字的颜色
+            withDrawBtn.addTarget(self, action: #selector(withDraw), for: .touchUpInside)
+            withDrawBtn.layer.cornerRadius = kScornerRadius
+            withDrawBtn.layer.masksToBounds = true
+            withDrawBtn.backgroundColor = UIColor.colorWithHexString(Color_Value: "#e6761c", alpha: 1.0)
+            view.addSubview(withDrawBtn)
+            withDrawBtn.frame = CGRect.init(x: (kMaxLeftOffset - kwithDrawBtnWidth)/2, y: 40, width: kwithDrawBtnWidth, height: 40)
+        }else{
+            
+        }
+        
+        
+        
+        
+     
     
         
         
@@ -184,7 +197,7 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         view.addSubview(footerView)
 
 
-        rightDataArray = [ "0项","0.0元"]
+        rightDataArray = [ "0项","0.0积分"]
   
         NotificationCenter.default.addObserver(self, selector: #selector(gotProfile(notification:)), name: NSNotification.Name(rawValue: "gotProfile"), object: nil)
         
@@ -204,7 +217,7 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if     login  { //已经登录
             var dic  = notification.userInfo!["key"]!  as!  [String : JSON]
             let finished = "\(dic["finished"]!.stringValue)项"
-            let account = "\(dic["account"]!.stringValue)元"
+            let account = "\(dic["account"]!.stringValue)积分"
             
             
             UserDefaults.standard.set(dic["account"]!.stringValue, forKey: "USER_BALANCE")

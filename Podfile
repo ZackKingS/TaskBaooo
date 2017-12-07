@@ -33,6 +33,7 @@ pod 'JPush'
 
 pod 'JAnalytics'
 
+#pod 'Reveal-SDK', :configurations => ['Debug']
 
 
 

@@ -19,8 +19,16 @@ class ZBNavVC: UINavigationController {
         navBar.tintColor =  UIColor.red// UIColor(r: 94, g: 94, b: 94, alpha: 1)
         navBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 17)]
         // 创建全局手势
-        initGlobalPan()
+//
     
+        
+        if  UserDefaults.standard.bool(forKey: "isOnline")  {
+            
+           initGlobalPan()
+        }else{
+            
+        }
+        
     }
     
    
