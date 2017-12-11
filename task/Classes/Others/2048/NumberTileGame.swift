@@ -52,13 +52,13 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
     
     @objc  func   reach(){
         
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.mode = MBProgressHUDMode.text
-        hud.label.text = "恭喜获得200积分"
-        hud.margin = 10
-        hud.offset.y = 50
-        hud.removeFromSuperViewOnHide = true
-        hud.hide(animated: true, afterDelay: 3)
+//        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+//        hud.mode = MBProgressHUDMode.text
+//        hud.label.text = "恭喜获得200积分"
+//        hud.margin = 10
+//        hud.offset.y = 50
+//        hud.removeFromSuperViewOnHide = true
+//        hud.hide(animated: true, afterDelay: 3)
         
     }
 
@@ -69,19 +69,19 @@ class NumberTileGameViewController : UIViewController, GameModelProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(reach), name: NSNotification.Name(rawValue: "reach8192"), object: nil)
     
     
-    let taskNameL = UILabel()
-    taskNameL.text = "达到8192后即可获得 200 积分"
-    taskNameL.textColor = UIColor.colorWithHexString(Color_Value: "333333", alpha: 1)
-    taskNameL.font = UIFont.systemFont(ofSize: 20)
-    taskNameL.textAlignment = .center
-    self.view.addSubview(taskNameL)
-    taskNameL.snp.makeConstraints { (make) in
-        make.top.equalTo(self.view).offset(50)
-//        make.left.equalTo(self.view).offset(35)
-        make.centerX.equalTo(self.view.snp.centerX)
-        make.width.equalTo(360)
-        make.height.equalTo(30)
-    }
+//    let taskNameL = UILabel()
+//    taskNameL.text = "达到8192后即可获得 200 积分"
+//    taskNameL.textColor = UIColor.colorWithHexString(Color_Value: "333333", alpha: 1)
+//    taskNameL.font = UIFont.systemFont(ofSize: 20)
+//    taskNameL.textAlignment = .center
+//    self.view.addSubview(taskNameL)
+//    taskNameL.snp.makeConstraints { (make) in
+//        make.top.equalTo(self.view).offset(50)
+////        make.left.equalTo(self.view).offset(35)
+//        make.centerX.equalTo(self.view.snp.centerX)
+//        make.width.equalTo(360)
+//        make.height.equalTo(30)
+//    }
     
     
     

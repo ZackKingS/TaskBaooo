@@ -25,6 +25,10 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var leftBtn :UIButton?
    fileprivate var dataArray = [Tasks]()
   
+    var storyBoardBanner: LLCycleScrollView!
+    
+    
+    
     
     
     var appStoreUrl :String?
@@ -409,15 +413,59 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
 
     func setupTableVie()   {
-        tableView = UITableView(frame:  CGRect(x: 0 , y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height ), style: UITableViewStyle.plain)
-        tableView?.dataSource = self
-        tableView?.delegate = self
-        tableView?.separatorStyle = .none
-        self.view.addSubview(tableView!)
-        view.backgroundColor = UIColor.globalBackgroundColor()
-
+        
+        
+        
+        
+        
+//        if UserDefaults.standard.bool(forKey: ZBLOGIN_KEY) {
+            tableView = UITableView(frame:  CGRect(x: 0 , y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height ), style: UITableViewStyle.plain)
+            tableView?.dataSource = self
+            tableView?.delegate = self
+            tableView?.separatorStyle = .none
+            self.view.addSubview(tableView!)
+            view.backgroundColor = UIColor.globalBackgroundColor()
+            
+            
+//        }else {
+//
+//
+//        }
+        
+        
+        
+  
+        // 网络图，本地图混合
+        let imagesURLStrings = [
+            "s3.jpg",
+            "http://www.g-photography.net/file_picture/3/3587/4.jpg",
+            "http://img2.zjolcdn.com/pic/0/13/66/56/13665652_914292.jpg",
+            "http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg",
+            "http://img3.redocn.com/tupian/20150806/weimeisheyingtupian_4779232.jpg",
+            ];
+        
+        
+        
+       let   banner  =  LLCycleScrollView()
+         banner.frame = CGRect(x: 0 , y: 0, width: UIScreen.main.bounds.width, height: 190 )
+        self.storyBoardBanner = banner
+        self.storyBoardBanner.imagePaths = imagesURLStrings
+        self.storyBoardBanner.imageViewContentMode = .scaleToFill
+        self.storyBoardBanner.pageControlPosition = .center
+//        self.view.addSubview( self.storyBoardBanner)
+        
+        self.tableView?.tableHeaderView = self.storyBoardBanner
+        
+        
+        
+       
     }
     
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "我的圈子 >"
+    }
     
    
     
@@ -429,6 +477,9 @@ class TasksViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return  dataArray.count
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

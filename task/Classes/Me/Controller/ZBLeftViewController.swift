@@ -134,7 +134,7 @@ class ZBLeftViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     
     var dataArray:[String]{
-        let array = NSArray.init(objects: "完成任务","用户余额")
+        let array = NSArray.init(objects: "完成活动","用户积分")
         return array as! [String]
     }
     

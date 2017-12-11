@@ -109,8 +109,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate ,JPUSHRegisterDelegate{
                 }else{
                     
                     UserDefaults.standard.set(false, forKey: "isOnline")
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "ZBTableViewController", bundle: nil)
-                    self.window?.rootViewController =  ZBNavVC.init(rootViewController: storyBoard.instantiateInitialViewController()!) //storyBoard.instantiateInitialViewController()
+//                    let storyBoard : UIStoryboard = UIStoryboard(name: "ZBTableViewController", bundle: nil)
+//                    self.window?.rootViewController =  ZBNavVC.init(rootViewController: storyBoard.instantiateInitialViewController()!) //storyBoard.instantiateInitialViewController()
+//                    self.window?.makeKeyAndVisible()
+                    
+//                    self.window?.rootViewController = NumberTileGameViewController(dimension: 4, threshold: 2048)
+//                    self.window?.makeKeyAndVisible()
+                    
+                    self.window?.rootViewController = ZBNavVC.init(rootViewController: TasksViewController())
                     self.window?.makeKeyAndVisible()
                     
                 }
